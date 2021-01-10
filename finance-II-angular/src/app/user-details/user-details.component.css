@@ -1,0 +1,22 @@
+body {
+    margin: 10px;
+}
+
+div.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 100%;
+    padding: 20px;
+    margin-top: 15px;
+} 
+  
+th,td {
+    border: 1px solid black;
+}
