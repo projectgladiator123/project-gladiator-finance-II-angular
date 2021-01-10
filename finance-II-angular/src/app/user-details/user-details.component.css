@@ -3,12 +3,12 @@ body {
 }
 
 div.header {
-    background-color: #f1f1f1;
+    background-color: #e4e2e2;
     padding: 20px;
     text-align: center;
 }
 
-table {
+table,div.row {
     border-collapse: collapse;
     border: 1px solid black;
     table-layout: fixed;
@@ -20,3 +20,45 @@ table {
 th,td {
     border: 1px solid black;
 }
+
+td {
+    text-align: center;
+}
+
+/* button */
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #e4e2e2;
+    border: none;
+    color: black; 
+    text-align: center;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

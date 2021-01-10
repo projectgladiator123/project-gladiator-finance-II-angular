@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
+  
   constructor() { }
+
+  users : User[];
 
   ngOnInit(): void {
   }
 
+  
+
+}
+
+
+export class User {
+  userId : Number;
+  name : String;
+  dateOfBirth : Date;
+  email : String;
+  phoneNo : Number;
+  username : String;
+  password : String;
+  address : String;
+  cardType : String;
+  accountNo : Number;
+  ifscCode : String;
+  userStatus : String;
 }

@@ -1,4 +1,5 @@
 <title>Admin Page</title>
+
 <div class="header">
   <h1>User Details Database</h1>
 </div>
@@ -21,6 +22,24 @@
             <th>Activate</th>
             <th>Delete</th>
         </tr>
+        <tr *ngFor = "let user of users">
+            <td>{{user.userId}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.dateOfBirth}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phoneNo}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.cardType}}</td>
+            <td>{{user.accountNo}}</td>
+            <td>{{user.ifscCode}}</td>
+            <td>{{user.userStatus}}</td>
+            <td><button class="button" style="vertical-align:middle"><span> Activate </span></button></td>  
+            <td><button class="button" style="vertical-align:middle"><span> Delete </span></button></td>
+
+        </tr>
+        
         
     </table>
     
