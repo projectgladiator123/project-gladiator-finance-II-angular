@@ -9,6 +9,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { ProductsComponent } from './products/products.component';
 import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     UserDetailsComponent,
     ProductsComponent,
-    TestComponent
+    TestComponent,
+    DashboardComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
