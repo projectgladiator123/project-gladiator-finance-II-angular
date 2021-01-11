@@ -44,4 +44,26 @@
         </tr>
 
     </table>
+
+
+    <div>
+        <h3>Products Purchased</h3>
+    </div>
+
+    <div *ngFor = "let purchase of purchases">
+            
+        Product : {{purchase.product.productName}} <br>
+        Purchase Date : {{purchase.dateOfPurchase}} <br>
+        <div *ngIf ="!purchase.remainingAmount" >
+            Fully Paid...
+        </div>
+        <div *ngIf ="purchase.remainingAmount" >
+            Amount Remaining to be paid : {{purchase.remainingAmount}} <br>
+            Installments Remaining : {{purchase.installmentsRemaining}}
+        </div>
+        <br> <br>
+
+    </div>
+    
+    <h3>Remaining Balance : {{card.balance}}</h3>
 </body>

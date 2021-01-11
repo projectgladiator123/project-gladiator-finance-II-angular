@@ -10,7 +10,12 @@ export class DashboardService {
   constructor(private http: HttpClient) { }
 
   fetchCard(userId : Number): Observable<any>{
-    let url = "http://localhost:8080/finance-II/api/dashboard?userId=" +userId;
+    let url = "http://localhost:8080/finance-II/api/dashboard-card?userId=" +userId;
+    return this.http.get(url);
+  }
+
+  fetchPurchase(userId : Number): Observable<any>{
+    let url = "http://localhost:8080/finance-II/api/dashboard-purchase-history?userId=" +userId;
     return this.http.get(url);
   }
 

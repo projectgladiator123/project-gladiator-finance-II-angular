@@ -24,8 +24,8 @@
         </tr>
         <tr *ngFor = "let user of users">
             <td>{{user.userId}}</td>
-            <td>{{user.username}}</td>
-            <td>{{user.dateOfBirth}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.dateOfBirth[2]}}-{{user.dateOfBirth[1]}}-{{user.dateOfBirth[0]}}</td>
             <td>{{user.email}}</td>
             <td>{{user.phoneNo}}</td>
             <td>{{user.username}}</td>
