@@ -11,7 +11,7 @@
                 CARD NUMBER :
             </th>
             <td>
-                58413226183786
+                {{card.cardNo}}
             </td>
         </tr>
         <tr>
@@ -19,15 +19,15 @@
                 NAME :
             </th>
             <td>
-                Subhajit Gupta
+                {{card.registration.name}}
             </td>
         </tr>
         <tr>
             <th>
-                VALID TILL : MM/YY
+                VALID TILL : MM/YYYY
             </th>
             <td>
-                10/23
+                {{card.validityOfCard[1]}}/{{card.validityOfCard[0]}}
             </td>
         </tr>
 
@@ -36,7 +36,7 @@
                 CARD TYPE : GOLD/PLATINUM
             </th>
             <td>
-                Gold
+                {{card.cardType}}
             </td>
         </tr>
         <tr >
