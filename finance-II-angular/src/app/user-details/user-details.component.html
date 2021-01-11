@@ -35,8 +35,8 @@
             <td>{{user.accountNo}}</td>
             <td>{{user.ifscCode}}</td>
             <td>{{user.userStatus}}</td>
-            <td><button class="button" style="vertical-align:middle"><span> Activate </span></button></td>  
-            <td><button class="button" style="vertical-align:middle"><span> Delete </span></button></td>
+            <td><button (click) = "activateUser(user)" (click) ="showAll()" class="button" style="vertical-align:middle"><span> Activate </span></button></td>  
+            <td><button (click) = "deleteUser(user)" (click) ="showAll()" class="button" style="vertical-align:middle"><span> Delete </span></button></td>
 
         </tr>
         
