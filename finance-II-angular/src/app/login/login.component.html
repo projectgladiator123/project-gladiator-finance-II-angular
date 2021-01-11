@@ -1,1 +1,6 @@
-<p>login Component is the third component</p>
+<form (ngSubmit)="loginCheck()">
+    Enter email :<input type = "email" name="t1" [(ngModel)]=login.email /> <br />
+    Enter your password :<input type ="password" name="t4" [(ngModel)]=login.password /> <br />
+   <button type ="submit">Login</button>
+
+</form>
