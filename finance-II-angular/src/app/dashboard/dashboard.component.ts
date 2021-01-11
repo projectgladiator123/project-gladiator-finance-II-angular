@@ -10,11 +10,14 @@ import { User } from '../user-details/user-details.component';
 })
 export class DashboardComponent implements OnInit {
 
+  id:Number;
+
   constructor(private dashboardService : DashboardService) { }
 
   ngOnInit(): void {
     this.fetchCard();
     this.fetchPurchase();
+    this.id=parseInt(sessionStorage.getItem('customerId'));
   }
 
   card : EMICard;
