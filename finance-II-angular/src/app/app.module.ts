@@ -9,6 +9,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { ProductsComponent } from './products/products.component';
 import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     UserDetailsComponent,
     ProductsComponent,
-    TestComponent
+    TestComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
