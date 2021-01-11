@@ -10,20 +10,23 @@ import { User } from '../user-details/user-details.component';
 })
 export class DashboardComponent implements OnInit {
 
-  id:Number;
+
+  id:Number = Number(sessionStorage.getItem('customerId'));
 
   constructor(private dashboardService : DashboardService) { }
 
   ngOnInit(): void {
     this.fetchCard();
     this.fetchPurchase();
-    this.id=parseInt(sessionStorage.getItem('customerId'));
   }
+
+  
 
   card : EMICard;
 
   fetchCard(){
-    this.dashboardService.fetchCard(2).subscribe(response => {
+    
+    this.dashboardService.fetchCard(this.id).subscribe(response => {
       this.card = response;
     });
   }
@@ -31,7 +34,7 @@ export class DashboardComponent implements OnInit {
   purchases : Purchases[];
 
   fetchPurchase(){
-    this.dashboardService.fetchPurchase(2).subscribe(response => {
+    this.dashboardService.fetchPurchase(this.id).subscribe(response => {
       this.purchases = response;
     });
   }
