@@ -21,13 +21,13 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.showAll();
   }
-  gotoDetails(pageName: any){
-    this.router.navigate([`${pageName}`]);
-  }
+  // gotoDetails(pageName: any){
+  //   this.router.navigate([`${pageName}`]);
+  // }
   showAll() {
     this.productService.showAll().subscribe(response => {
       
-     // alert(JSON.stringify(response));
+     alert(JSON.stringify(response));
       console.log(response[0].productName);
       this.productlist = response;
     })
