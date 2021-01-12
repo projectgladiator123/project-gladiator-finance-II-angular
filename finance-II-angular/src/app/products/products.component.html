@@ -1,1 +1,28 @@
-<p>products works!</p>
+<title>Admin Page</title>
+
+<div class="header">
+  <h1> Shopping Page </h1>
+</div>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Vendor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ products.name }}</td>
+            <td>{{ Products.price }}</td>
+            <td>{{ product.vendor }}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    
+</body>
+
+
+
