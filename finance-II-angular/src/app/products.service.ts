@@ -9,7 +9,7 @@ export class ProductsService {
   constructor(private http: HttpClient) {
 }
    showAll(): Observable<any>{
-    let url = "http://localhost:8080/finance-II/api/product-info";
+    let url = "http://localhost:8080/finance-II/api/productslist-info";
     return this.http.get(url);
   }
 }

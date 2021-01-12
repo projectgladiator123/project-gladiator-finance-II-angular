@@ -11,7 +11,7 @@ export class ProductInfoService {
   constructor(private http:HttpClient) { }
 
   fetchProductDetails(): Observable<any>{
-    let url = "http://localhost:8080/finance-II/api/product-info?productId=4";
+    let url = "http://localhost:8080/finance-II/api/productslist-info";
     return this.http.get(url);
   }
 }
