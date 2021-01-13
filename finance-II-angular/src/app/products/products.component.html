@@ -19,7 +19,7 @@
         
         
             <tr *ngFor="let product of productlist">
-            <td ><nav><a class="nav-link" routerLink="product-info" routerLinkActive="active">{{ product.productName }}</a></nav></td>
+            <td ><nav><a class="nav-link" [routerLink]="'/product-info'" routerLinkActive="active">{{ product.productName }}</a></nav></td>
             
             <td>{{ product.productPrice }}</td>
             <td >{{ product.vendor }}</td>

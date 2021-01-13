@@ -1,5 +1,12 @@
 <title>Dashboard</title>
 
+<!-- <nav>
+    <a routerLink="/product" routerLinkActive="active">show products</a>
+</nav> -->
+
+<div>
+<a [routerLink]="'/product'">Show Products</a>
+</div>
 <div class="header">
   <h1>User Dashboard</h1>
 </div>
@@ -77,4 +84,14 @@
     </div>
     
     <h3>Remaining Balance : {{card.balance}}</h3>
+
+   <!-- <div class="products">
+    <a [routerLink]="'/product'">Show Products</a>
+
+   </div> -->
+   <!-- <nav>
+    <a routerLink="/product" routerLinkActive="active">Already a user?</a>
+</nav> -->
+
+
 </body>
