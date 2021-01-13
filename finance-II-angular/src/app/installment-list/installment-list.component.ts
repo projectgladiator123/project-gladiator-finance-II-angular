@@ -10,6 +10,8 @@ import { Installments } from '../dashboard/dashboard.component';
 export class InstallmentListComponent implements OnInit {
 
   @Input() purchaseId :Number;
+
+  message : String;
   
   constructor(private dashboardService : DashboardService) { }
 
@@ -25,6 +27,12 @@ export class InstallmentListComponent implements OnInit {
       
       this.installments = response;
     });
+  }
+
+  payInstallment(id : Number){
+    this.dashboardService.payInstallment(id).subscribe(response => {
+      this.message = response;
+    })
   }
 
 }
