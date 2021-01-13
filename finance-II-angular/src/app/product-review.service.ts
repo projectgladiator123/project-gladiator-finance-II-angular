@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductReview } from './product-review/product-review.component';
+import { ProductReview, Review } from './product-review/product-review.component';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +10,13 @@ export class ProductReviewService {
 
   constructor(private http:HttpClient) { }
   
-  fetchProductReview(): Observable<any>{
-    let url = "http://localhost:8080/finance-II/api/product-review-by-productId?productId=4";
+  fetchProductReview(productId : Number): Observable<any>{
+    let url = "http://localhost:8080/finance-II/api/product-review-by-productId?productId="+productId;
     return this.http.get(url);
   }
 
-  addReview(productReview:ProductReview): Observable<any>{
+  addReview(r : Review): Observable<any>{
       let url = "http://localhost:8080/finance-II/api/add-review";
-      return this.http.post(url,productReview);
+      return this.http.post(url,r);
   }
 }

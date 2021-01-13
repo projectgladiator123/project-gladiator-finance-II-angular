@@ -12,7 +12,8 @@ export class ProductReviewComponent implements OnInit {
 
   productReview:ProductReview;
   productReview2:ProductReview = new ProductReview();
-  
+  r : Review = new Review();
+  message : String;
   constructor(private productReviewService:ProductReviewService) { }
 
   ngOnInit(): void {
@@ -20,7 +21,7 @@ export class ProductReviewComponent implements OnInit {
   }
 
   fetchReview(){
-    this.productReviewService.fetchProductReview().subscribe(response => {
+    this.productReviewService.fetchProductReview(Number(sessionStorage.getItem('productId'))).subscribe(response => {
        //alert(JSON.stringify(response));
       this.productReview=response;
       console.log(response.review);
@@ -28,9 +29,15 @@ export class ProductReviewComponent implements OnInit {
   }
 
   addProductReview(){
-    this.productReviewService.addReview(this.productReview2).subscribe(response =>{
+    //this.productReview2.user.userId = Number(sessionStorage.getItem('customerId'));
+    //this.productReview2.product.productId = Number(sessionStorage.getItem('productId'));
+    this.r.productReview = this.productReview2;
+    this.r.productId = Number(sessionStorage.getItem('productId'));
+    this.r.userId = Number(sessionStorage.getItem('customerId'));
+    this.productReviewService.addReview(this.r).subscribe(response =>{
       alert(JSON.stringify(response));
       // console.log(this.productReview2.rating);
+      this.message = "Review added successfully"; 
     })
   }
 
@@ -43,4 +50,10 @@ export class ProductReview{
   user:User;
   product:Product;
   
+}
+
+export class Review {
+  productReview : ProductReview;
+  userId:Number;
+  productId : Number;
 }
