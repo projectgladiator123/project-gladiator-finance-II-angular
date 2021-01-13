@@ -1,1 +1,14 @@
-<p>login Component is the third component</p>
+<p>{{message}}</p>
+
+<div id = "n1">
+<form (ngSubmit)="loginCheck()">
+    Enter UserName :<input type = "text" name="t1" [(ngModel)]=login.username /> <br />
+    Enter your password :<input type ="password" name="t4" [(ngModel)]=login.password /> <br />
+   <button type ="submit" >Login</button>
+
+</form>
+<a [routerLink]="'/adminlogin'">Login as admin</a>
+
+
+
+</div>

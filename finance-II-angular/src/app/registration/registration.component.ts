@@ -18,10 +18,11 @@ export class RegistrationComponent {
   constructor (private registrationService: RegistrationService ,private router:Router) { }
   
   registerUser() {
+    this.user.cardStatus="pending";
     this.registrationService.registerUser(this.user).subscribe(response => {
      console.log(JSON.stringify(response));
       if (response.status="SUCCESS"){
-        this.user.cardStatus="pending";
+        
       }
         else{
           this.message="Registration Failed";
