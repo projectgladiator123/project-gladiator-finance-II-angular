@@ -9,8 +9,12 @@ import { ProductInfoService } from '../product-info.service';
 })
 export class ProductInfoComponent implements OnInit {
 
+  productId : Number = Number(sessionStorage.getItem('productId'));
   product: Product;
   numbers:Number[];
+  tenure : Number;
+  message :String;
+  p : Purchase = new Purchase();
 
   constructor(private productInfoService : ProductInfoService) { }
 
@@ -19,17 +23,37 @@ export class ProductInfoComponent implements OnInit {
     }
 
   fetchAll(){
-    this.productInfoService.fetchProductDetails().subscribe(response => {
-       //alert(JSON.stringify(response));
+    this.productInfoService.fetchProductDetails(this.productId).subscribe(response => {
       this.product=response;
       this.fillNumber(this.product.maxTenure);
-      console.log(response.productId);
+      //console.log(response.productId);
     })
+  }
+
+  buyNow(productId :Number){
+
+    this.p.userId = Number(sessionStorage.getItem('customerId'));
+    this.p.tenurePeriodOpted = this.tenure;
+    this.p.productId = productId;
+    this.productInfoService.buy(this.p).subscribe(response => {
+      this.message = "Bought Successfully";
+    });
+
+
   }
 
   fillNumber(p:Number){
     this.numbers = Array(p).fill(1).map((x,i)=>i+1);
   }
+
+
+
+}
+
+export class Purchase{
+  userId : Number;
+  productId : Number;
+  tenurePeriodOpted : Number;
 }
 
 

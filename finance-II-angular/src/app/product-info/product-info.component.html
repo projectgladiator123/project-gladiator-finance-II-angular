@@ -26,14 +26,15 @@
       <p id="tenure-period">{{product.maxTenure}}</p>
       <br>
       <h3>EMI STARTING FROM 6000pm</h3>
-      <button id="btn"> BUY NOW</button>
-      <br>
-      <br>
       <b id="tenureselection">Select tenure period:</b>
-      <select name="tenureperiodopted" id="" >
-        <option value="" *ngFor="let n of numbers">{{n}}</option>
+      <select name="tenureperiodopted" [(ngModel)] = "tenure">
+        <option value="" *ngFor="let n of numbers" [ngValue] = "n">{{n}}</option>
       </select>
       <br>
+      <button id="btn" (click) = "buyNow(product.productId)"> BUY NOW</button> &nbsp; &nbsp; {{message}}
+      <br>
+      <br>
+      
       <br>
       <a id="terms" href="">Terms and Conditions</a>
       <app-product-review></app-product-review>

@@ -4,20 +4,18 @@ import { Router } from "@angular/router";
 import { from } from "rxjs";
 import { Product } from "../dashboard/dashboard.component";
 import { ProductInfoService } from "../product-info.service";
+import { ProductInfoComponent } from "../product-info/product-info.component";
 import { ProductsService } from "../products.service";
 
 
 @Component({
   selector: "app-products",
   templateUrl: "./products.component.html",
-  styleUrls: ["./products.component.scss"],
+  styleUrls: ["./products.component.css"],
 })
 export class ProductsComponent implements OnInit {
   productlist: Product[];
   
-
-
-
   constructor(private productService: ProductsService,
                private router: Router) { }
   
@@ -31,13 +29,14 @@ export class ProductsComponent implements OnInit {
   // }
   showAll() {
     this.productService.showAll().subscribe(response => {
-      
-    //  alert(JSON.stringify(response));
-      console.log(response[0].productName);
       this.productlist = response;
     })
     
  
+  }
+
+  updateSessionstorage(productId: Number){
+    sessionStorage.setItem('productId',String(productId));
   }
  
     // find(Product:Number){
