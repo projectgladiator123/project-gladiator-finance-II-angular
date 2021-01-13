@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { FormsModule } from '@angular/forms';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { InstallmentListComponent } from './installment-list/installment-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductInfoComponent } from './product-info/product-info.component';
     TestComponent,
     DashboardComponent,
     AdminloginComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    InstallmentListComponent
   ],
   imports: [
     BrowserModule,

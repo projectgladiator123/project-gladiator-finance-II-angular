@@ -19,4 +19,9 @@ export class DashboardService {
     return this.http.get(url);
   }
 
+  fetchInstallment(id : Number): Observable<any>{
+    let url = "http://localhost:8080/finance-II/api/dashboard-installment-history?id=" +id;
+    return this.http.get(url);
+  }
+
 }

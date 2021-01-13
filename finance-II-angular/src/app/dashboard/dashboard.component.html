@@ -50,18 +50,29 @@
         <h3>Products Purchased</h3>
     </div>
 
+    
     <div *ngFor = "let purchase of purchases">
-            
+
+        <h3>Product Name</h3>
+        Id : {{purchase.id}} <br>
+
         Product : {{purchase.product.productName}} <br>
-        Purchase Date : {{purchase.dateOfPurchase}} <br>
-        <div *ngIf ="!purchase.remainingAmount" >
+        Purchase Date : {{purchase.dateOfPurchase}} <br> 
+        Product Price : {{purchase.product.productPrice}} <br> <br> 
+        <div *ngIf ="!purchase.remainingAmount" style="color: green; font-size: larger;" >
             Fully Paid...
         </div>
-        <div *ngIf ="purchase.remainingAmount" >
-            Amount Remaining to be paid : {{purchase.remainingAmount}} <br>
+        <div *ngIf ="purchase.remainingAmount" style="color: red; font-size: larger;">
+            <div style="color: green;"> Amount paid : {{purchase.product.productPrice - purchase.remainingAmount}} &nbsp; &nbsp;
+            Installments paid : {{purchase.tenurePeriodOpted - purchase.installmentsRemaining}} <br></div>
+            Amount Remaining to be paid : {{purchase.remainingAmount}} &nbsp; &nbsp;
             Installments Remaining : {{purchase.installmentsRemaining}}
         </div>
         <br> <br>
+
+        
+
+        <app-installment-list [purchaseId]="purchase.id" > </app-installment-list>
 
     </div>
     

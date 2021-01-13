@@ -25,19 +25,22 @@ export class DashboardComponent implements OnInit {
   card : EMICard;
 
   fetchCard(){
-    
+
     this.dashboardService.fetchCard(this.id).subscribe(response => {
       this.card = response;
     });
   }
 
   purchases : Purchases[];
+  purchase : Purchases;
 
   fetchPurchase(){
     this.dashboardService.fetchPurchase(this.id).subscribe(response => {
       this.purchases = response;
     });
+    
   }
+  
 
 }
 
@@ -70,4 +73,13 @@ export class Product {
   quantity : Number;
   maxTenure : Number;
   productImage : String;
+}
+
+export class Installments {
+  installmentId : Number;
+  paymentDate : Date;
+  amountPaid : Number;
+  dueDate : Date;
+  status : String;
+  purchases : Purchases;
 }
