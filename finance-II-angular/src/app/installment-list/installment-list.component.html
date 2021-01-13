@@ -1,0 +1,14 @@
+<h3>Installment History</h3>
+        
+<div *ngFor = "let i of installments">
+    <div *ngIf="i.amountPaid" style="color: green;">
+        Payment Date : {{i.paymentDate}} &nbsp; &nbsp;
+        Amount Paid : {{i.amountPaid}} <br> <br> 
+        
+    </div>
+    <div *ngIf="!i.amountPaid" style="color: red;">
+        Due Date : {{i.dueDate}}   &nbsp;&nbsp;
+        Amount to be paid : {{i.purchases.remainingAmount /i.purchases.installmentsRemaining}} &nbsp;&nbsp;
+        <button (click) = "payInstallment(i.installmentId)"> Pay Now </button> <br> <br>
+    </div>
+</div>

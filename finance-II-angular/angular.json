@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "finance-II-angular"
+  "defaultProject": "finance-II-angular",
+  "cli": {
+    "analytics": false
+  }
 }

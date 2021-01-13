@@ -10,8 +10,7 @@ import { ProductInfoService } from '../product-info.service';
 export class ProductInfoComponent implements OnInit {
 
   product: Product;
-  
-  
+  numbers:Number[];
 
   constructor(private productInfoService : ProductInfoService) { }
 
@@ -23,10 +22,14 @@ export class ProductInfoComponent implements OnInit {
     this.productInfoService.fetchProductDetails().subscribe(response => {
        //alert(JSON.stringify(response));
       this.product=response;
+      this.fillNumber(this.product.maxTenure);
       console.log(response.productId);
     })
   }
 
+  fillNumber(p:Number){
+    this.numbers = Array(p).fill(1).map((x,i)=>i+1);
+  }
 }
 
 

@@ -51,7 +51,9 @@ export class User {
   password : String;
   address : String;
   cardType : String;
+  bankName:String;
   accountNo : Number;
   ifscCode : String;
-  userStatus : String;
+  cardStatus:String;
+  
 }

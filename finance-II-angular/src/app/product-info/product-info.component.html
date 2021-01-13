@@ -22,12 +22,21 @@
       <p id="tenure-period">{{product.maxTenure}}</p>
       <br>
       <h3>EMI STARTING FROM 6000pm</h3>
-      <button id="btn"> PAY NOW</button>
+      <button id="btn"> BUY NOW</button>
+      <br>
+      <br>
+      <b id="tenureselection">Select tenure period:</b>
+      <select name="tenureperiodopted" id="" >
+        <option value="" *ngFor="let n of numbers">{{n}}</option>
+      </select>
       <br>
       <br>
       <a id="terms" href="">Terms and Conditions</a>
+      <app-product-review></app-product-review>
     </div>
-
+    
+      
+    
     <!-- <h1>{{product.productId}}</h1>
     <h1>{{product.productImage}}</h1>
     <h1>{{product.productName}}</h1>
