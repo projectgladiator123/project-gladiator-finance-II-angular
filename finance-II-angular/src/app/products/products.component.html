@@ -1,1 +1,37 @@
-<p>products works!</p>
+
+<title>Admin Page</title>
+<div class="container">
+    <nav class="navbar navbar-default">
+  <h1> Shopping Page </h1>
+
+<body>
+    <table>
+       
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Vendor</th>
+          </tr>
+        
+        
+          <tr *ngFor="let product of productlist">
+            <td><nav><a class="nav-link" routerLink="product-info" routerLinkActive="active">{{ product.productName }}</a></nav></td>
+            
+   
+            <td>{{ product.productPrice }}</td>
+            <td>{{ product.vendor }}</td>
+            
+          </tr>
+       
+      </table>
+      </body>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
+
+    
+    
+
+
+
+
