@@ -11,17 +11,31 @@
             <th>Name</th>
             <th>Price</th>
             <th>Vendor</th>
-          </tr>
+           <td><img src=" https://tse3.mm.bing.net/th?id=OIP.sQG-m4YIkRSOwsVKAgi4JwHaGS&pid=Api&P=0&w=203&h=173" alt="SONY TV" width="150" height="100"></td>
+            <td><img src="https://www.theappliancerepairdoctor.com/wp-content/uploads/2016/03/samsung-fridge.png" alt="samsung fridge"  width="150" height="100"></td>
+            <td><img src="https://store.hp.com/UKStore/Html/Merch/Images/c05456657_1750x1285.jpg" alt="HP NOTEBOOK" width="150" height="100"> </td>
+            <td><img src="https://tse4.mm.bing.net/th?id=OIP.M_R_qJAcqvIyo0UUaaPSugHaEH&pid=Api&P=0&w=297&h=166" width="200" height="100"></td>
+            <td><img src="https://tse3.explicit.bing.net/th?id=OIP.l553-416mAEfUB00ctVjYgHaE8&pid=Api&P=0&w=229&h=154" width="150" height="150"></td>
         
         
-          <tr *ngFor="let product of productlist">
-            <td><nav><a class="nav-link" routerLink="product-info" routerLinkActive="active">{{ product.productName }}</a></nav></td>
+            <tr *ngFor="let product of productlist">
+            <td ><nav><a class="nav-link" routerLink="product-info" routerLinkActive="active">{{ product.productName }}</a></nav></td>
             
-   
             <td>{{ product.productPrice }}</td>
-            <td>{{ product.vendor }}</td>
+            <td >{{ product.vendor }}</td>
+            <!-- <td img src="{{product. productImage}}"></td> -->
+          </tr>  
+            <!-- <table>
+              <img src="https://www.theappliancerepairdoctor.com/wp-content/uploads/2016/03/samsung-fridge.png" alt="samsung fridge"  width="150" height="100">
+              <img src="" -->
             
-          </tr>
+          
+         
+    
+            
+                     
+            
+          
        
       </table>
       </body>

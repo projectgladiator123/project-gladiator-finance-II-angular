@@ -12,4 +12,8 @@ export class ProductsService {
     let url = "http://localhost:8080/finance-II/api/productlist-info";
     return this.http.get(url);
   }
+  // find(productId:Number): Observable<any>{
+  //    let url="http://localhost:8080/finance-II/api/product-info?productId=?"+productId;
+  //    return this.http.get(url);
+  // }
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
-import { Installments } from '../dashboard/dashboard.component';
+import { DashboardComponent, Installments } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-installment-list',
@@ -12,8 +12,9 @@ export class InstallmentListComponent implements OnInit {
   @Input() purchaseId :Number;
 
   message : String;
+  status : String;
   
-  constructor(private dashboardService : DashboardService) { }
+  constructor(private dashboardService : DashboardService, private dashboardComponent : DashboardComponent ) { }
 
   ngOnInit(): void {
     this.fetchInstallment();
@@ -31,7 +32,10 @@ export class InstallmentListComponent implements OnInit {
 
   payInstallment(id : Number){
     this.dashboardService.payInstallment(id).subscribe(response => {
-      this.message = response;
+      this.ngOnInit();
+      this.dashboardComponent.ngOnInit();
+      this.status = response.status;
+      this.message = response.message;
     })
   }
 
