@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { from } from "rxjs";
 import { Product } from "../dashboard/dashboard.component";
 import { ProductInfoService } from "../product-info.service";
+import { ProductInfoComponent } from "../product-info/product-info.component";
 import { ProductsService } from "../products.service";
 
 
@@ -13,42 +14,29 @@ import { ProductsService } from "../products.service";
   styleUrls: ["./products.component.css"],
 })
 export class ProductsComponent implements OnInit {
-  productlist:   Product[];
-  filteredProducts: Product[];
- private _searchTerm:    string;
- get searchTerm():string{
-   return this._searchTerm;
- }
- set searchTerm(value:string){
-   this._searchTerm = value;
-   this.filteredProducts=this.filterProducts(value);
- }
-filterProducts(searchString : string){
-  return this.productlist.filter(Product=>Product.productName.toLowerCase().indexOf(searchString.toLowerCase())! == -1);
-
-}
+  productlist: Product[];
   
-
-
-
   constructor(private productService: ProductsService,
                private router: Router) { }
   
   ngOnInit() {
     this.showAll();
-    // this.filteredProducts=this.productlist();
+    
     // this.find();
   }
-  
+  // gotoDetails(pageName: any){
+  //   this.router.navigate([`${pageName}`]);
+  // }
   showAll() {
     this.productService.showAll().subscribe(response => {
-      
-    //  alert(JSON.stringify(response));
-      console.log(response[0].productName);
       this.productlist = response;
     })
     
  
+  }
+
+  updateSessionstorage(productId: Number){
+    sessionStorage.setItem('productId',String(productId));
   }
  
     // find(Product:Number){
@@ -59,7 +47,6 @@ filterProducts(searchString : string){
     // }
     
   }
-  
 
   
   
