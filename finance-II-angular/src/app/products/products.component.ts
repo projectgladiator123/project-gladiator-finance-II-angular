@@ -14,19 +14,19 @@ import { ProductsService } from "../products.service";
 })
 export class ProductsComponent implements OnInit {
   productlist:   Product[];
-//   filteredProducts: Product[];
-//  private _searchTerm:    string;
-//  get searchTerm():string{
-//    return this._searchTerm;
-//  }
-//  set searchTerm(value:string){
-//    this._searchTerm = value;
-//    this.filteredProducts=this.filterProducts(value);
-//  }
-// filterProducts(searchString : string){
-//   return this.productlist.filter(Product=>Product.productName.toLowerCase().indexOf(searchString.toLowerCase())! == -1);
+  filteredProducts: Product[];
+ private _searchTerm:    string;
+ get searchTerm():string{
+   return this._searchTerm;
+ }
+ set searchTerm(value:string){
+   this._searchTerm = value;
+   this.filteredProducts=this.filterProducts(value);
+ }
+filterProducts(searchString : string){
+  return this.productlist.filter(Product=>Product.productName.toLowerCase().indexOf(searchString.toLowerCase())! == -1);
 
-// }
+}
   
 
 
