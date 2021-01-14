@@ -14,6 +14,7 @@ export class ProductInfoComponent implements OnInit {
   numbers:Number[];
   tenure : Number;
   message :String;
+  status : String;
   p : Purchase = new Purchase();
 
   constructor(private productInfoService : ProductInfoService) { }
@@ -26,6 +27,7 @@ export class ProductInfoComponent implements OnInit {
     this.productInfoService.fetchProductDetails(this.productId).subscribe(response => {
       this.product=response;
       this.fillNumber(this.product.maxTenure);
+      
       //console.log(response.productId);
     })
   }
@@ -36,7 +38,9 @@ export class ProductInfoComponent implements OnInit {
     this.p.tenurePeriodOpted = this.tenure;
     this.p.productId = productId;
     this.productInfoService.buy(this.p).subscribe(response => {
-      this.message = "Bought Successfully";
+      this.message = response.message;
+      this.status = response.status;
+      
     });
 
 

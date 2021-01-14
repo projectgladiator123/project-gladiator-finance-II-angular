@@ -17,6 +17,6 @@
         <input type="number" placeholder="Rate Us"  name="t2"   [(ngModel)]=productReview2.rating>
         <br>
         <br>
-        <input type="submit" value="Add Review"> &nbsp; &nbsp; {{message}}
+        <input type="submit" value="Add Review" (click)= "fetchReview()"> &nbsp; &nbsp; {{message}}
     </form>
 </div>
