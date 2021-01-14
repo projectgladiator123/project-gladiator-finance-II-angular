@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 
@@ -16,8 +17,9 @@ export class LoginComponent implements OnInit {
   ngOnInit():void {
   }
 
-  loginCheck(){
-  
+  loginCheck(login:NgForm){
+      this.login.username=login.value.t1;
+      this.login.password=login.value.t4;
     alert(JSON.stringify(this.login));
     console.log('wow');
     this.loginService.login(this.login).subscribe(response =>{

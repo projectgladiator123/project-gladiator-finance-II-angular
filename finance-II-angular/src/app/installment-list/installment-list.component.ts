@@ -32,10 +32,11 @@ export class InstallmentListComponent implements OnInit {
 
   payInstallment(id : Number){
     this.dashboardService.payInstallment(id).subscribe(response => {
-      this.ngOnInit();
-      this.dashboardComponent.ngOnInit();
       this.status = response.status;
       this.message = response.message;
+      this.ngOnInit();
+      this.dashboardComponent.ngOnInit();
+      
     })
   }
 

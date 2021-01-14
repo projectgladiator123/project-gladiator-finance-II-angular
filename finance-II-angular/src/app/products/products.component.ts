@@ -36,7 +36,7 @@ filterProducts(searchString : string){
   
   ngOnInit() {
     this.showAll();
-    this.filteredProducts=this.productlist();
+    // this.filteredProducts=this.productlist();
     // this.find();
   }
   

@@ -1,10 +1,13 @@
 <p>{{message}}</p>
 
 <div id = "n1">
-<form (ngSubmit)="loginCheck()">
-    Enter UserName :<input type = "text" name="t1" [(ngModel)]=login.username /> <br />
-    Enter your password :<input type ="password" name="t4" [(ngModel)]=login.password /> <br />
-   <button type ="submit" >Login</button>
+<form #login="ngForm" (ngSubmit)="loginCheck(login)">
+    Enter UserName :<input type = "text" name="t1" [(ngModel)]=login.username required #t1="ngModel" /> <br />
+    <span *ngIf="t1.touched && !t1.valid">Please enter your username</span>
+    <br>
+    Enter your password :<input type ="password" name="t4" [(ngModel)]=login.password required #t4="ngModel" /> <br />
+    <span *ngIf="t1.touched && !t1.valid">Please enter your password</span> <br>
+    <button type ="submit" [disabled]="!login.valid" >Login</button>
 
 </form>
 <a [routerLink]="'/adminlogin'">Login as admin</a>

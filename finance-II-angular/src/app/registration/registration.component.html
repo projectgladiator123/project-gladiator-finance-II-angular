@@ -1,36 +1,55 @@
 <h2><b> Registration Form </b></h2>
 <div>
-<form  (ngSubmit)= registerUser()>
+<form #user="ngForm"  (ngSubmit)= registerUser(user)>
 <label>Name:</label>
- <input type="text" name="Name" [(ngModel)]="user.name"><br><br> 
+ <input  type="text" placeholder="Enter name" name="name" [(ngModel)]="user.name" required #name="ngModel">
+ <span *ngIf="name.touched && !name.valid">This is a required field.</span><br><br> 
+
 <label>Date of Birth:</label>
-<input type="date" name="dob" [(ngModel)]="user.dateOfBirth"><br><br>
+<input  type="date" name="dateOfBirth" [(ngModel)]="user.dateOfBirth" required #dateOfBirth="ngModel">
+<span *ngIf="dateOfBirth.touched && !dateOfBirth.valid">This is a required field.</span><br><br>
+
 <label>Phone Number:</label>
-<input type="number" name="phno" [(ngModel)]="user.phoneNo"><br><br>
+<input  type="number" palceholder="Enter phone number" name="phoneNo" [(ngModel)]="user.phoneNo" required maxlength="10" minlength="9" #phoneNo="ngModel">
+<span *ngIf="phoneNo.touched && !phoneNo.valid">This is a required field.</span><br><br>
+
 <label>UserName:</label>
-<input type="text" name="usrname"[(ngModel)]="user.username" ><br><br>
+<input type="text" placeholder="Enter username" name="username"[(ngModel)]="user.username" required maxlength="18" minlength="4" #username="ngModel" >
+<span *ngIf="username.touched && !username.valid">This is a required field.</span><br><br>
+
 <label>Email Address:</label>
-<input type="email" id="email" name="email" [(ngModel)]="user.email"><br><br>
+<input type="email" placeholder="Enter email" id="email" name="email" [(ngModel)]="user.email" required #email="ngModel" >
+<span *ngIf="email.touched && !email.valid">This is a required field.</span><br><br>
+
 <label for="psw">Password:</label>
-<input type="password" placeholder="Enter Password" name="psw" id="psw" required [(ngModel)]="user.password"><br><br>
+<input type="password" placeholder="Enter password" name="psw" id="psw"  [(ngModel)]="user.password" minlength="8" maxlength="20" required #password="ngModel">
+<span *ngIf="password.touched && !password.valid">This is a required field.</span><br><br>
 <!-- <label for="psw-repeat">Confirm Password:</label> -->
 <!-- <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required [(ngModel)]=user.userconfpass><br> -->
 <label>Address:</label>
-<input type="text" name="addr" [(ngModel)]="user.address"><br><br>
+<input  type="text" name="address" [(ngModel)]="user.address" minlength="4" required #address="ngModel" >
+<span *ngIf="address.touched && !address.valid">This is a required field.</span><br><br>
 
+<section class ="other">
 <label>Card Type:</label>
-<input type="radio" id="gold" name ="cardtype" value ="gold" [(ngModel)]="user.cardType">
-<label for="gold">gold</label>
+<input  type="radio" id="gold" name ="cardtype" value ="gold" [(ngModel)]="user.cardType" required #cardType="ngModel">
+<label for="gold">gold</label><span *ngIf="cardType.touched && !cardType.valid">This is a required field.</span>
+
 <input type ="radio" id ="platinum" name ="cardtype" value="platinum"[(ngModel)]="user.cardType">
 <label for ="platinum">platinum</label><br><br>
+</section>
 
 <label >Select Bank:</label>
-<input type="text" name="bank" [(ngModel)]="user.bankName" ><br><br>
+<input type="text" name="bankName" [(ngModel)]="user.bankName" required #bankName="ngModel">
+<span *ngIf="bankName.touched && !bankName.valid">This is a required field.</span><br><br>
 <label>Savings Account Number:</label>
-<input type="number" name="account number" [(ngModel)]="user.accountNo"><br><br>
+<input type="number" name="accountNo" [(ngModel)]="user.accountNo" required maxlength="16" #accountNo="ngModel">
+<span *ngIf="accountNo.touched && !accountNo.valid">This is a required field.</span><br><br>
 <label>IFSC Code:</label>
-<input type="text" name="Name" [(ngModel)]="user.ifscCode"><br><br><br><br>
-<button type="submit">Register</button>
+<input type="text" name="ifscCode" [(ngModel)]="user.ifscCode" required #ifscCode="ngModel">
+<span *ngIf="ifscCode.touched && !ifscCode.valid">This is a required field.</span><br><br>
+
+<button type="submit" [disabled]="!user.valid">Register</button>
 
 </form>
 </div>
