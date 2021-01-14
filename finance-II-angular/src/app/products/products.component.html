@@ -3,6 +3,15 @@
 <div class="container">
     <nav class="navbar navbar-default">
   <h1> Shopping Page </h1>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="search by name"
+    style="width: 300px;" [(ngModel)]="searchTerm" />
+  </div>
+  <div class="form-group">
+    <button (click)="searchTerm" class="btn btn-primary" >
+      search product
+    </button>  
+  </div>
 
 <body>
     <table>
@@ -19,7 +28,7 @@
         
         
             <tr *ngFor="let product of productlist">
-            <td ><nav><a class="nav-link" [routerLink]="'/product-info'" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }}</a></nav></td>
+            <td ><nav><a class="nav-link" routerLink="/product-info" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }}</a></nav></td>
   
             <!-- <td ><nav><a class="nav-link" routerLink="product-info" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }}</a></nav></td> -->
             
