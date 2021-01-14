@@ -29,14 +29,11 @@ export class ProductReviewComponent implements OnInit {
   }
 
   addProductReview(){
-    //this.productReview2.user.userId = Number(sessionStorage.getItem('customerId'));
-    //this.productReview2.product.productId = Number(sessionStorage.getItem('productId'));
     this.r.productReview = this.productReview2;
     this.r.productId = Number(sessionStorage.getItem('productId'));
     this.r.userId = Number(sessionStorage.getItem('customerId'));
     this.productReviewService.addReview(this.r).subscribe(response =>{
-      alert(JSON.stringify(response));
-      // console.log(this.productReview2.rating);
+      this.ngOnInit();
       this.message = "Review added successfully"; 
     })
   }
