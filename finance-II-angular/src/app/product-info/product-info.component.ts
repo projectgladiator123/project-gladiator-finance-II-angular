@@ -14,6 +14,7 @@ export class ProductInfoComponent implements OnInit {
   numbers:Number[];
   tenure : Number;
   message :String;
+  status : String;
   
   p : Purchase = new Purchase();
 
@@ -38,9 +39,9 @@ export class ProductInfoComponent implements OnInit {
     this.p.tenurePeriodOpted = this.tenure;
     this.p.productId = productId;
     this.productInfoService.buy(this.p).subscribe(response => {
-      // this.message = response.message;
-      // this.status = response.status;
-      this.message = "Bought Successfully";      
+      this.message = response.message;
+      this.status = response.status;
+      //this.message = "Bought Successfully";      
     });
 
 

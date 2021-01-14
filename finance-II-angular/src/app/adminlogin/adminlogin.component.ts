@@ -22,7 +22,6 @@ export class AdminloginComponent implements OnInit {
 
   adminLoginCheck(){
     this.adminLoginService.login(this.adminlogin).subscribe(response =>{
-      alert(JSON.stringify(response));
       console.log(response.message);
        if(response.status == 'SUCESS'){
         this.router.navigate(['userdetails']);
