@@ -7,15 +7,18 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import {ProductsComponent} from './products/products.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { 
+  AuthGuardService as AuthGuard 
+} from './auth/auth-guard.service';
 
 const routes: Routes = [
-  {path:'login' ,component: LoginComponent},
-  { path:'register',component:RegistrationComponent},
-  { path:'dashboard',component:DashboardComponent},
-  { path:'adminlogin',component:AdminloginComponent},
-  { path:'userdetails',component:UserDetailsComponent},
-  { path: 'product',component:ProductsComponent},
-  {path:"product-info",component:ProductInfoComponent}
+  {path:'login' ,component: LoginComponent,canActivate: [AuthGuard]},
+  { path:'register',component:RegistrationComponent,canActivate: [AuthGuard]},
+  { path:'dashboard',component:DashboardComponent,canActivate: [AuthGuard]},
+  { path:'adminlogin',component:AdminloginComponent,canActivate: [AuthGuard]},
+  { path:'userdetails',component:UserDetailsComponent,canActivate: [AuthGuard]},
+  { path: 'product',component:ProductsComponent,canActivate: [AuthGuard]},
+  {path:"product-info",component:ProductInfoComponent,canActivate: [AuthGuard]}
     
 ];
 
