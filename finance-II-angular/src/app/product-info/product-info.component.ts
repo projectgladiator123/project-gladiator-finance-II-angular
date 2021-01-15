@@ -15,6 +15,7 @@ export class ProductInfoComponent implements OnInit {
   tenure : Number;
   message :String;
   status : String;
+  
   p : Purchase = new Purchase();
 
   constructor(private productInfoService : ProductInfoService) { }
@@ -40,7 +41,7 @@ export class ProductInfoComponent implements OnInit {
     this.productInfoService.buy(this.p).subscribe(response => {
       this.message = response.message;
       this.status = response.status;
-      
+      //this.message = "Bought Successfully";      
     });
 
 

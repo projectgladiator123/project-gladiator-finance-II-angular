@@ -21,7 +21,7 @@ export class UserDetailsService {
   }
 
   activate(userId: Number): Observable<any> {
-    let url = "http://localhost:8084/finance-II/api/user-status-update?userId=" +userId;
+    let url = "http://localhost:8080/finance-II/api/user-status-update?userId=" +userId;
     return this.http.get(url);
   }
 }

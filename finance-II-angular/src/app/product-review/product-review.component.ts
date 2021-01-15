@@ -22,7 +22,6 @@ export class ProductReviewComponent implements OnInit {
 
   fetchReview(){
     this.productReviewService.fetchProductReview(Number(sessionStorage.getItem('productId'))).subscribe(response => {
-       //alert(JSON.stringify(response));
       this.productReview=response;
       console.log(response.review);
     })

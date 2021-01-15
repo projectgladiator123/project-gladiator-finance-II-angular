@@ -20,8 +20,6 @@ export class UserDetailsComponent implements OnInit {
 
   showAll(){
     this.userService.showAll().subscribe(response => {
-      
-      //alert(JSON.stringify(response));
       this.users = response;
     })
   }
