@@ -24,4 +24,9 @@ export class UserDetailsService {
     let url = "http://localhost:8080/finance-II/api/user-status-update?userId=" +userId;
     return this.http.get(url);
   }
+
+  addCard(userId : Number, cardType : String) :  Observable<any> {
+    let url = "http://localhost:8080/finance-II/api/addCard?userId=" +userId+"&cardType=" + cardType;
+    return this.http.get(url);
+  }
 }

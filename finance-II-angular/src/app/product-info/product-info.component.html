@@ -31,7 +31,9 @@
         <option value="" *ngFor="let n of numbers" [ngValue] = "n">{{n}}</option>
       </select>
       <br>
-      <button id="btn" (click) = "buyNow(product.productId)"> BUY NOW</button> &nbsp; &nbsp; {{message}} &nbsp; &nbsp; {{status}}
+
+      <button id="btn" *ngIf="!product.quantity" disabled> BUY NOW</button>
+      <button id="btn" *ngIf="product.quantity"> BUY NOW</button> &nbsp; &nbsp; {{message}} &nbsp; &nbsp; {{status}}
       <br>
       <br>
       
