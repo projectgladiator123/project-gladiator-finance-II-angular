@@ -34,7 +34,6 @@ export class PaymentGatewayComponent implements OnInit {
 
     this.p.userId = Number(sessionStorage.getItem('customerId'));
     this.p.tenurePeriodOpted = this.tenure;
-    sessionStorage.setItem('tenureOpted',String(this.tenure));
     this.p.productId = this.productId;
     this.productInfoService.buy(this.p).subscribe(response => {
       this.message = response.message;
