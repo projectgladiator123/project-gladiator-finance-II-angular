@@ -1,53 +1,49 @@
-
-<title>Admin Page</title>
-<div class="container">
-    <nav class="navbar navbar-default">
-  <h1> Shopping Page </h1>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
 <body>
-    <table>
-       
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Vendor</th>
-           <td><img src=" https://tse3.mm.bing.net/th?id=OIP.sQG-m4YIkRSOwsVKAgi4JwHaGS&pid=Api&P=0&w=203&h=173" alt="SONY TV" width="150" height="100"></td>
-            <td><img src="https://www.theappliancerepairdoctor.com/wp-content/uploads/2016/03/samsung-fridge.png" alt="samsung fridge"  width="150" height="100"></td>
-            <td><img src="https://store.hp.com/UKStore/Html/Merch/Images/c05456657_1750x1285.jpg" alt="HP NOTEBOOK" width="150" height="100"> </td>
-            <td><img src="https://tse4.mm.bing.net/th?id=OIP.M_R_qJAcqvIyo0UUaaPSugHaEH&pid=Api&P=0&w=297&h=166" width="200" height="100"></td>
-            <td><img src="https://tse3.explicit.bing.net/th?id=OIP.l553-416mAEfUB00ctVjYgHaE8&pid=Api&P=0&w=229&h=154" width="150" height="150"></td>
-        
-        
-            <tr *ngFor="let product of productlist">
-            <td ><nav><a class="nav-link" [routerLink]="'/product-info'" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }}</a></nav></td>
+
+<div class="jumbotron text-align">
+  <h1>SHOPPING</h1>
+  <a><img src=" https://tse3.mm.bing.net/th?id=OIP.sQG-m4YIkRSOwsVKAgi4JwHaGS&pid=Api&P=0&w=203&h=173" alt="SONY TV" width="150" height="150"></a>
+  <a><img src="https://www.theappliancerepairdoctor.com/wp-content/uploads/2016/03/samsung-fridge.png" alt="samsung fridge"  width="150" height="150"></a>
+  <a><img src="https://store.hp.com/UKStore/Html/Merch/Images/c05456657_1750x1285.jpg" alt="HP NOTEBOOK" width="150" height="150"> </a>
+  <a><img src="https://tse4.mm.bing.net/th?id=OIP.M_R_qJAcqvIyo0UUaaPSugHaEH&pid=Api&P=0&w=297&h=166" width="150" height="150"></a>
+  <a><img src="https://tse3.explicit.bing.net/th?id=OIP.l553-416mAEfUB00ctVjYgHaE8&pid=Api&P=0&w=229&h=154" width="150" height="150"></a>
+  <a><img src="https://5.imimg.com/data5/MI/IE/MY-31194682/lg-single-door-refrigerator-188-ltr-500x500.png" width="150" height="150"></a>
+  <a><img src="https://cdn.mos.cms.futurecdn.net/fQ3rjuW46d9rGAZRoanXdK.jpg" width="150" height="150"></a>
+  <a><img src="https://images-na.ssl-images-amazon.com/images/I/71E5zB1qbIL._SL1500_.jpg" width="150" height="150"></a>
+  <a><img src="https://www.reliancedigital.in/medias/IFB-Diva-Aqua-SX-Front-Loading-Fully-Automatic-Washing-Machine-6-Kgs-491281353-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjYyOTV8aW1hZ2UvanBlZ3xpbWFnZXMvaGMwL2gwYS84OTUxMDI4ODc1Mjk0LmpwZ3xhMjA0ZGY0YzkzZjczNDFkMWM5NDY1NGQ1ODRjYTMyNzBkYzQ3ZTNiNjg5NmNlMjc5NTFkYmMxYjhmMDU1Y2Q2" width="150" height="150"></a>
+  <h2>Get all products at 0 downpayment EMI</h2> 
+</div>
   
-            <!-- <td ><nav><a class="nav-link" routerLink="product-info" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }}</a></nav></td> -->
-            
-            <td>{{ product.productPrice }}</td>
-            <td >{{ product.vendor }}</td>
-            <!-- <td img src="{{product. productImage}}"></td> -->
-          </tr>  
-            <!-- <table>
-              <img src="https://www.theappliancerepairdoctor.com/wp-content/uploads/2016/03/samsung-fridge.png" alt="samsung fridge"  width="150" height="100">
-              <img src="" -->
-            
-          
-         
-    
-            
-                     
-            
-          
+<div class="jumbotron text-center">
+  <table class="table table-dark table-hover">
+   
+    <tbody >
+      <tr *ngFor="let product of productlist">
        
-      </table>
-      </body>
-    </nav>
-    <router-outlet></router-outlet>
+      <th><nav><a class="nav-link" [routerLink]="'/product-info'" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }} </a></nav></th>
+        
+     <th >{{ product.productPrice }}
+      
+     
+    <th >{{ product.vendor }}</th>
+      </tr>
+     
+    </tbody>
+  </table>
 </div>
 
-    
-    
 
 
-
-
+</body>
+</html>
