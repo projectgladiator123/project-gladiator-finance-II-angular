@@ -13,9 +13,9 @@
             <th>Email Id</th>
             <th>Phone number</th>
             <th>Username</th>
-            <th>Password</th>
             <th>Address</th>
             <th>Card Type</th>
+            <th>Bank Name</th>
             <th>Account Number</th>
             <th>IFSC Code</th>
             <th>Status</th>
@@ -29,19 +29,21 @@
             <td>{{user.email}}</td>
             <td>{{user.phoneNo}}</td>
             <td>{{user.username}}</td>
-            <td>{{user.password}}</td>
             <td>{{user.address}}</td>
             <td>{{user.cardType}}</td>
+            <td>{{user.bankName}}</td>
             <td>{{user.accountNo}}</td>
             <td>{{user.ifscCode}}</td>
             <td>{{user.userStatus}}</td>
-            <td><button (click) = "activateUser(user)" (click) ="showAll()" class="button" style="vertical-align:middle"><span> Activate </span></button></td>  
-            <td><button (click) = "deleteUser(user)" (click) ="showAll()" class="button" style="vertical-align:middle"><span> Delete </span></button></td>
+            <td><button (click) = "activateUser(user)" class="button" style="vertical-align:middle"><span> Activate </span></button></td>  
+            <td><button (click) = "deleteUser(user)" class="button" style="vertical-align:middle"><span> Delete </span></button></td>
 
         </tr>
         
         
     </table>
+
+    <h3>{{message}}</h3>
     
 </body>
 

@@ -7,6 +7,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import {ProductsComponent} from './products/products.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 
 const routes: Routes = [
   {path:'login' ,component: LoginComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path:'adminlogin',component:AdminloginComponent},
   { path:'userdetails',component:UserDetailsComponent},
   { path: 'product',component:ProductsComponent},
-  {path:"product-info",component:ProductInfoComponent}
+  {path:"product-info",component:ProductInfoComponent},
+  {path:"payment",component:PaymentGatewayComponent}
     
 ];
 
