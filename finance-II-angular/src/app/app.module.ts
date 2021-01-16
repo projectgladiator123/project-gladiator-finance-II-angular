@@ -20,6 +20,7 @@ import { InstallmentListComponent } from './installment-list/installment-list.co
 import { from } from 'rxjs';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { CommonModule } from '@angular/common';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 
@@ -36,7 +37,8 @@ import { CommonModule } from '@angular/common';
     AdminloginComponent,
     ProductInfoComponent,
     InstallmentListComponent,
-    PaymentGatewayComponent
+    PaymentGatewayComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
