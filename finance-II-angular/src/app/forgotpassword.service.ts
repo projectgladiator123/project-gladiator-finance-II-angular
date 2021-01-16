@@ -11,7 +11,7 @@ export class ForgotpasswordService {
   constructor(private http:HttpClient) { }
 
   forgotpassword(username:String):Observable<any>{
-    let url ="http://localhost:8080/finance-II/api/recover-password?username="+username;
+    let url ="http://localhost:8085/finance-II/api/recover-password?username="+username;
     return this.http.get(url);
   }
 
