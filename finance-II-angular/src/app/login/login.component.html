@@ -1,17 +1,22 @@
 <p>{{message}}</p>
 
 <div id = "n1">
-<form #login="ngForm" (ngSubmit)="loginCheck(login)">
-    Enter UserName :<input type = "text" name="t1" [(ngModel)]=login.username required #t1="ngModel" /> <br />
-    <span *ngIf="t1.touched && !t1.valid">Please enter your username</span>
-    <br>
-    Enter your password :<input type ="password" name="t4" [(ngModel)]=login.password required #t4="ngModel" /> <br />
-    <span *ngIf="t1.touched && !t1.valid">Please enter your password</span> <br>
-    <button type ="submit" [disabled]="!login.valid" >Login</button>
-
+<form id="login-form" #login="ngForm" (ngSubmit)="loginCheck(login)">
+    
+        <h3>Login</h3>
+    <label for="t1"><h3>Enter Username :</h3></label>
+    <input type = "text" name="t1" [(ngModel)]=login.username required #t1="ngModel" /> 
+    <span *ngIf="t1.touched && !t1.valid">Please enter your username</span><br /><br />
+        
+    <label for="t4"><h3>Enter Password :</h3></label>
+    <input type ="password" name="t4" [(ngModel)]=login.password required #t4="ngModel" /> 
+    <span *ngIf="t4.touched && !t4.valid">Please enter your password</span> <br><br/><br />
+    <button type ="submit" id="send" [disabled]="!login.valid" >Login</button>
+<br><br><br>
 </form>
-<a [routerLink]="'/adminlogin'">Login as admin</a>
-
-
-
 </div>
+<div>
+<button id="admin-login"><a [routerLink]="'/adminlogin'">Login as admin</a></button>
+</div>
+
+

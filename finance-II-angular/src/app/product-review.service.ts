@@ -11,12 +11,12 @@ export class ProductReviewService {
   constructor(private http:HttpClient) { }
   
   fetchProductReview(productId : Number): Observable<any>{
-    let url = "http://localhost:8084/finance-II/api/product-review-by-productId?productId="+productId;
+    let url = "http://localhost:8085/finance-II/api/product-review-by-productId?productId="+productId;
     return this.http.get(url);
   }
 
   addReview(r : Review): Observable<any>{
-      let url = "http://localhost:8084/finance-II/api/add-review";
+      let url = "http://localhost:8085/finance-II/api/add-review";
       return this.http.post(url,r);
   }
 }

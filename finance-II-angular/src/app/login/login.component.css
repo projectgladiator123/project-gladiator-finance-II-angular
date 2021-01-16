@@ -20,3 +20,75 @@
 input.ng-touched.ng-invalid{
     border: 1px solid red;
 }
+div{text-align: center;
+    margin-top: 12%;
+    
+}
+fieldset {
+  margin-top: auto;
+  background-color: #f2f2f2;
+  width: auto;
+  display: inline-block;
+  
+}
+input [type=text] {
+  margin: 5px;
+  text-align: left;
+  display: inline-block;
+}
+label{
+  width: 175px;
+  display: inline-block;
+  text-align: left;
+}
+input[type=password], select {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=text], select {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#send{
+  background-color: #18b654;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#admin-login{
+  background-color: #18b654;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#n1{
+  border:2px solid black;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10%;
+  background-color: #f2f2f2;
+  
+}
+
