@@ -26,15 +26,23 @@
             <tr *ngFor="let product of productlist">
             <td ><nav><a class="nav-link" [routerLink]="'/product-info'" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }}</a></nav></td>
   
-            <!-- <td ><nav><a class="nav-link" routerLink="product-info" routerLinkActive="active" (click) = "updateSessionstorage(product.productId)">{{ product.productName }}</a></nav></td> -->
-            
+            <div *ngIf = "product.quantity ===1">
+              <td>{{ product.productPrice }}</td>
+              <td >{{ product.vendor }}</td>
+              <td>Only One available in stock. HURRY UP !!!! </td>
+            </div>
+            <div *ngIf = "product.quantity >=2">
             <td>{{ product.productPrice }}</td>
             <td >{{ product.vendor }}</td>
+          </div>
+          <div *ngIf = "!product.quantity">
+            <td>{{ product.productPrice }}</td>
+            <td >{{ product.vendor }}</td>
+            <td style="color: red;">Not In Stock</td>
+          </div>
             <!-- <td img src="{{product. productImage}}"></td> -->
           </tr>  
-            <!-- <table>
-              <img src="https://www.theappliancerepairdoctor.com/wp-content/uploads/2016/03/samsung-fridge.png" alt="samsung fridge"  width="150" height="100">
-              <img src="" -->
+            
             
           
          

@@ -12,7 +12,7 @@ export class UserDetailsComponent implements OnInit {
 
   users : User[];
   user : User;
-
+  message : String;
 
   ngOnInit(): void {
     this.showAll();
@@ -26,14 +26,23 @@ export class UserDetailsComponent implements OnInit {
 
   deleteUser(user : User){
     this.user= user;
-      console.log("delete : "+this.user.userId);
-      this.userService.delete(this.user.userId).subscribe();
+      this.userService.delete(this.user.userId).subscribe(response =>{
+        this.showAll();
+      });
   }
 
   activateUser(user : User){
     this.user= user;
-    console.log("activate : "+this.user.userId);
-      this.userService.activate(this.user.userId).subscribe();
+    this.userService.activate(this.user.userId).subscribe(respose =>{
+      this.showAll();
+      this.addCard(user.userId, user.cardType);
+    });
+  }
+
+  addCard(userId : Number, cardType : String){
+    this.userService.addCard(userId,cardType).subscribe(response =>{
+      this.message = "User activated. New card generarted for user with card number "+response;
+    })
   }
 
 }
