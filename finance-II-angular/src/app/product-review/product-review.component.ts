@@ -10,6 +10,7 @@ import { User } from '../user-details/user-details.component';
 })
 export class ProductReviewComponent implements OnInit {
 
+  currentRate = 0;
   productReview:ProductReview;
   productReview2:ProductReview = new ProductReview();
   r : Review = new Review();

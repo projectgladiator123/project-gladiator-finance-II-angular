@@ -36,7 +36,7 @@ export class PaymentGatewayComponent implements OnInit {
     this.p.tenurePeriodOpted = this.tenure;
     this.p.productId = this.productId;
     this.productInfoService.buy(this.p).subscribe(response => {
-      this.message = response.message;
+       this.message = response.message;
       this.status = response.status;      
     });
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminloginService } from '../adminlogin.service';
 import { UserDetailsService } from '../user-details.service';
@@ -20,7 +21,9 @@ export class AdminloginComponent implements OnInit {
   ngOnInit() {
   }
 
-  adminLoginCheck(){
+  adminLoginCheck(adminlogin : NgForm){
+    this.adminlogin.username = adminlogin.value.t1;
+    this.adminlogin.password = adminlogin.value.t4;
     this.adminLoginService.login(this.adminlogin).subscribe(response =>{
       console.log(response.message);
        if(response.status == 'SUCESS'){

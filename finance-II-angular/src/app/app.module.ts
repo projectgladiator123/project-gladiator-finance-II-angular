@@ -14,12 +14,14 @@ import { RegistrationService } from './registration.service';
 import { ProductReviewComponent } from './product-review/product-review.component';
 import { ProductsService } from './products.service';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { InstallmentListComponent } from './installment-list/installment-list.component';
 import { from } from 'rxjs';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { CommonModule } from '@angular/common';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { TermsandconditionComponent } from './termsandcondition/termsandcondition.component';
 
 
 
@@ -36,13 +38,16 @@ import { CommonModule } from '@angular/common';
     AdminloginComponent,
     ProductInfoComponent,
     InstallmentListComponent,
-    PaymentGatewayComponent
+    PaymentGatewayComponent,
+    ForgotpasswordComponent,
+    TermsandconditionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule
   ],
   providers: [RegistrationService,ProductsService],

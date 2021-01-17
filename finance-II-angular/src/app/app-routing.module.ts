@@ -8,6 +8,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import {ProductsComponent} from './products/products.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { TermsandconditionComponent } from './termsandcondition/termsandcondition.component';
 
 const routes: Routes = [
   {path:'login' ,component: LoginComponent},
@@ -17,7 +19,11 @@ const routes: Routes = [
   { path:'userdetails',component:UserDetailsComponent},
   { path: 'product',component:ProductsComponent},
   {path:"product-info",component:ProductInfoComponent},
-  {path:"payment",component:PaymentGatewayComponent}
+  {path:"payment",component:PaymentGatewayComponent},
+  {path:"forgotpassword",component:ForgotpasswordComponent},
+  {path:"termsandcondition",component:TermsandconditionComponent}
+
+
     
 ];
 

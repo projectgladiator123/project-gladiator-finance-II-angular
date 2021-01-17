@@ -1,4 +1,4 @@
-body {
+ /*body {
     margin: 10px;
   }
   
@@ -7,10 +7,9 @@ body {
     padding: 20px;
     text-align: center;
   }
-
+*/
   
-  table {
-    
+  #card-table {
     border-collapse: collapse;
     border: 1.5px solid black;
     table-layout: auto;
@@ -21,10 +20,9 @@ body {
     margin-right: auto;
     margin-bottom: 20px;
   } 
-  
    
   th,td {
-    font-weight: lighter;
+    font-weight: bolder;
     padding: 10px;
     border: none;
     text-align: left;
@@ -36,9 +34,36 @@ body {
       background-color:rgb(4, 163, 4);
       color: white;
   }
-  
-  
-  
-  
-  tr:hover {background-color: #ddd;}
+  tr:hover {background-color: #ddd;} 
+
+
+  .col-sm-3{
+    border: 1px solid #ccc;
+    background-color: black;
+    height: 550vh;
+  }
+  .btn{
+    color: black;
+    margin-top: 20px;
+  }
+  .col-sm-9{
+    /* width: 40%;
+    border-left: none;
+    display: inline; */
+    height: 100%;
+  }
+  .badge{
+    font-size: 20px;
+  }
+  #product-table-header{
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  #products-purchased-table{
+    width: 100%;
+    border-radius: 20px;
+  }
+  #remaining-balance-header{
+    margin-left: 28%;
+  }
   
