@@ -14,7 +14,7 @@ import { RegistrationService } from './registration.service';
 import { ProductReviewComponent } from './product-review/product-review.component';
 import { ProductsService } from './products.service';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { InstallmentListComponent } from './installment-list/installment-list.component';
 import { from } from 'rxjs';
@@ -45,6 +45,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule
   ],
   providers: [RegistrationService,ProductsService],
