@@ -11,7 +11,7 @@ export class AdminloginService {
   constructor(private http:HttpClient) { }
 
   login(adminlogin:AdminLogin):Observable<any>{
-    let url ="http://localhost:8085/finance-II/api/admin-login";
+    let url ="http://localhost:8080/finance-II/api/admin-login";
   return this.http.post(url,adminlogin);
   }
 }
