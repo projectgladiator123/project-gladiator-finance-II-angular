@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DashboardService } from '../dashboard.service';
 import { ProductsComponent } from '../products/products.component';
 import { User } from '../user-details/user-details.component';
@@ -12,8 +13,15 @@ export class DashboardComponent implements OnInit {
 
 
   id:Number = Number(sessionStorage.getItem('customerId'));
+  showHide: boolean;
+  showHide2: boolean;
+  showHide3: boolean;
 
-  constructor(private dashboardService : DashboardService) { }
+  constructor(private dashboardService : DashboardService,private router: Router) {
+    this.showHide=false;
+    this.showHide2=false;
+    this.showHide3=false;
+   }
 
   ngOnInit(): void {
     this.fetchCard();
@@ -40,6 +48,23 @@ export class DashboardComponent implements OnInit {
     });
     
   }
+
+  changeShowStatus(){
+    this.showHide = true;
+    this.showHide2=false;
+    this.showHide3=false;
+  }
+  changeShowStatus2(){
+    this.showHide2 = true;
+    this.showHide = false;
+    this.showHide3=false;
+  }
+  changeShowStatus3(){
+    this.showHide3 = true;
+    this.showHide2 = false;
+    this.showHide=false;
+  }
+  
   
 
 }
