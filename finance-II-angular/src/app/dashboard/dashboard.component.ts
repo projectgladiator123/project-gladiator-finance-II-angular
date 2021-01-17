@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DashboardService } from '../dashboard.service';
 import { ProductsComponent } from '../products/products.component';
 import { User } from '../user-details/user-details.component';
@@ -13,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
   id:Number = Number(sessionStorage.getItem('customerId'));
 
-  constructor(private dashboardService : DashboardService) { }
+  constructor(private dashboardService : DashboardService,private router: Router) { }
 
   ngOnInit(): void {
     this.fetchCard();
@@ -39,6 +40,13 @@ export class DashboardComponent implements OnInit {
       this.purchases = response;
     });
     
+  }
+
+  logOut(){
+    sessionStorage.setItem('customerId' ,'null');
+         sessionStorage.setItem('customerName','null');
+         //sessionStorage.setItem('productId','null');
+    this.router.navigate(['login']);
   }
   
 

@@ -36,9 +36,11 @@
       <button id="btn" *ngIf="product.quantity" (click) = "proceedToPayment()"> BUY NOW</button> &nbsp; &nbsp; {{message}} &nbsp; &nbsp; {{status}}
       <br>
       <br>
+
+      <a [routerLink]="'/termsandcondition'">Terms and Condition</a>
       
       <br>
-      <a id="terms" href="">Terms and Conditions</a>
+      
       <app-product-review></app-product-review>
     </div>
     
