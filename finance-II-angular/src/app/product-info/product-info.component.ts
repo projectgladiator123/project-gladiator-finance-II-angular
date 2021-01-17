@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../dashboard/dashboard.component';
 import { ProductInfoService } from '../product-info.service';
 
@@ -18,7 +19,7 @@ export class ProductInfoComponent implements OnInit {
   
   p : Purchase = new Purchase();
 
-  constructor(private productInfoService : ProductInfoService) { }
+  constructor(private productInfoService : ProductInfoService,private router: Router) { }
 
   ngOnInit(){
        this.fetchAll();
@@ -28,24 +29,15 @@ export class ProductInfoComponent implements OnInit {
     this.productInfoService.fetchProductDetails(this.productId).subscribe(response => {
       this.product=response;
       this.fillNumber(this.product.maxTenure);
-      
-      //console.log(response.productId);
     })
   }
 
-  buyNow(productId :Number){
-
-    this.p.userId = Number(sessionStorage.getItem('customerId'));
-    this.p.tenurePeriodOpted = this.tenure;
-    this.p.productId = productId;
-    this.productInfoService.buy(this.p).subscribe(response => {
-      this.message = response.message;
-      this.status = response.status;
-      //this.message = "Bought Successfully";      
-    });
-
-
+  proceedToPayment(){
+    sessionStorage.setItem('tenureOpted',String(this.tenure));
+    this.router.navigate(['payment']);
   }
+
+  
 
   fillNumber(p:Number){
     this.numbers = Array(p).fill(1).map((x,i)=>i+1);

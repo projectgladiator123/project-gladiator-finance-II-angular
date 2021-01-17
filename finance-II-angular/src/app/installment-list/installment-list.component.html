@@ -3,11 +3,11 @@
 <div *ngFor = "let i of installments">
     <div *ngIf="i.amountPaid" style="color: green;">
         Payment Date : {{i.paymentDate}} &nbsp; &nbsp;
-        Amount Paid : {{i.amountPaid}} <br> <br> 
+        Amount Paid : Rs : {{i.amountPaid | number:'.2-2'}} <br> <br> 
     </div>
     <div *ngIf="!i.amountPaid" style="color: red;">
         Due Date : {{i.dueDate}}   &nbsp;&nbsp;
-        Amount to be paid : {{i.purchases.remainingAmount /i.purchases.installmentsRemaining}} &nbsp;&nbsp;
+        Amount to be paid : Rs : {{i.purchases.remainingAmount /i.purchases.installmentsRemaining | number:'.2-2'}} &nbsp;&nbsp;
         <button (click) = "payInstallment(i.installmentId)"> Pay Now </button> <br> <br>
     </div>
 </div>

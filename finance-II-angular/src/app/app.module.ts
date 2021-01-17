@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { InstallmentListComponent } from './installment-list/installment-list.component';
 import { from } from 'rxjs';
+import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -33,13 +35,15 @@ import { from } from 'rxjs';
     ProductReviewComponent,
     AdminloginComponent,
     ProductInfoComponent,
-    InstallmentListComponent
+    InstallmentListComponent,
+    PaymentGatewayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [RegistrationService,ProductsService],
   bootstrap: [AppComponent]
