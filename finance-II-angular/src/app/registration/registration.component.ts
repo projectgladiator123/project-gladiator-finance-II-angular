@@ -34,7 +34,7 @@ export class RegistrationComponent {
     this.registrationService.registerUser(this.user).subscribe(response => {
      console.log(JSON.stringify(response));
       if (response.status="SUCCESS"){
-        
+        this.message=response.message;
       }
         else{
           this.message="Registration Failed";
