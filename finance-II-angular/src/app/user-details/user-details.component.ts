@@ -137,6 +137,6 @@ export class User {
   bankName:String;
   accountNo : Number;
   ifscCode : String;
-  cardStatus:String;
+  userStatus:String;
   
 }

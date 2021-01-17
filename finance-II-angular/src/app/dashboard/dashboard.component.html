@@ -141,7 +141,7 @@
                     <td class="activate" colspan="2"> ACTIVATED </td>
                 </tr>
             </table>
-            <h3 id="remaining-balance-header">Remaining Balance : Rs : {{card.balance | number:'.2'}}</h3>
+            <h3 id="remaining-balance-header">Remaining Balance : Rs : {{card.balance | number:'.2-2'}}</h3>
         </div>
         </div> 
          <div class="col-sm-9" *ngIf="showHide2"> 
@@ -196,9 +196,9 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>{{purchase.product.productPrice - purchase.remainingAmount}} &nbsp; &nbsp;</td>
+                                  <td>Rs. {{purchase.product.productPrice - purchase.remainingAmount | number:'.2-2'}} &nbsp; &nbsp;</td>
                                   <td>{{purchase.tenurePeriodOpted - purchase.installmentsRemaining}}</td>
-                                  <td>{{purchase.remainingAmount}} &nbsp; &nbsp;</td>
+                                  <td> Rs. {{purchase.remainingAmount | number:'.2-2'}} &nbsp; &nbsp;</td>
                                   <td>{{purchase.installmentsRemaining}}</td>
                                 </tr>
                               </tbody>
