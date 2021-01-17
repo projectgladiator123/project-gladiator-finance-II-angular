@@ -30,7 +30,7 @@ export class RegistrationComponent {
     this.user.bankName=user.value.bankName;
     this.user.accountNo=user.value.accountNo;
     this.user.ifscCode=user.value.ifscCode;
-    this.user.cardStatus=user.value.cardStatus;
+    this.user.userStatus="pending";
     this.registrationService.registerUser(this.user).subscribe(response => {
      console.log(JSON.stringify(response));
       if (response.status="SUCCESS"){
