@@ -1,17 +1,32 @@
 <p>{{ message }}</p>
 
-<div id = "n1">
-<form #adminlogin="ngForm" (ngSubmit)="adminLoginCheck()">
+<div class="container" id = "n1">
+       <p id="admin-head">Admin Login</p>
+   <form class="form-horizontal" id="admin-login" #adminlogin="ngForm" (ngSubmit)="adminLoginCheck()">
+   <table>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+      <tr>
+          <td >Admin Username:</td>
+          <td><input type="text"name="t1" [(ngModel)]=adminlogin.username required #t1="ngModel"/><br><span id="validation" *ngIf="t1.touched && !t1.valid">Please enter your username</span><br></td>
+      </tr>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+      <tr>
+          <td>Admin Password:</td>
+          <td><input type ="password" name="t4" [(ngModel)]=adminlogin.password required #t4="ngModel"/><br><span id="validation" *ngIf="t4.touched && !t4.valid">Please enter your password</span></td>
+      </tr>
+  </table><br><br>
     
-       <h3>Admin Login</h3>
-    <label> <h3>Enter Username :</h3></label>
-    <input type = "text" name="t1" [(ngModel)]=adminlogin.username required #t1="ngModel"/>
-    <span *ngIf="t1.touched && !t1.valid">This is a required field.</span><br><br> 
-   <label> <h3>Enter Password :</h3></label>
-    <input type ="password" name="t4" [(ngModel)]=adminlogin.password required #t4="ngModel" />
-    <span *ngIf="t4.touched && !t4.valid">This is a required field.</span><br><br> 
-   <button type ="submit" id="admin-enter" >Login</button><br><br>
+      
+     
+
+    <button type ="submit" class="btn btn-success btn-lg" id="admin-enter" >Login</button><br><br>
     
-</form>
+   </form>
 </div>
 

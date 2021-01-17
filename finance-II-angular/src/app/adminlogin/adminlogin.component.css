@@ -5,25 +5,15 @@ div{text-align: center;
     margin-top: 12%;
     
 }
-fieldset {
-  margin-top: auto;
-  background-color: #f2f2f2;
-  width: auto;
-  display: inline-block;
-  
-}
-input [type=text] {
-  margin: 5px;
-  text-align: left;
-  display: inline-block;
-}
+
+
 label{
   width: 175px;
   display: inline-block;
   text-align: left;
 }
 input[type=password], select {
-  width: 35%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -32,7 +22,7 @@ input[type=password], select {
   box-sizing: border-box;
 }
 input[type=text], select {
-  width: 35%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -40,7 +30,7 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-#admin-enter{
+/* #admin-enter{
  background-color: #18b654;
   border: none;
   color: rgb(255, 255, 255);
@@ -50,12 +40,23 @@ input[type=text], select {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;
-}
+  cursor: pointer; 
+}*/
 #n1{
   border:2px solid black;
-  width: 40%;
-  margin-left: 30%;
+  width: 30%;
+  margin-left: 37%;
   margin-top: 10%;
   background-color: #f2f2f2;
+  border-radius: 25px;
+  box-shadow: 5px 10px black;
+}
+#admin-head{
+  font-size: x-large;
+}
+table{
+  margin-left: 55px;
+}
+td,th{
+  padding: 5px;
 }
