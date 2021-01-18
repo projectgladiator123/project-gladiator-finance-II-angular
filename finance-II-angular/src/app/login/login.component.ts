@@ -20,16 +20,17 @@ export class LoginComponent implements OnInit {
   loginCheck(login:NgForm){
       this.login.username=login.value.t1;
       this.login.password=login.value.t4;
-    console.log('wow');
+    
     this.loginService.login(this.login).subscribe(response =>{
-      console.log(response);
-       if(response.status == 'SUCESS'){
+      if(response.status == 'SUCESS'){
+        
          let customerId = response.customerId;
          let customerName = response.customerName;
          sessionStorage.setItem('customerId' ,String(customerId));
          sessionStorage.setItem('customerName',customerName);
+        
          this.router.navigate(['dashboard']);
-         console.log('checking');
+        
        }
        else
        this.message = response.message;

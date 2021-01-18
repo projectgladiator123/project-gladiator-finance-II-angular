@@ -16,11 +16,13 @@ export class DashboardComponent implements OnInit {
   showHide: boolean;
   showHide2: boolean;
   showHide3: boolean;
+  showHide4:boolean;
 
   constructor(private dashboardService : DashboardService,private router: Router) {
     this.showHide=false;
     this.showHide2=false;
     this.showHide3=false;
+    this.showHide4=true;
    }
 
   ngOnInit(): void {
@@ -53,22 +55,25 @@ export class DashboardComponent implements OnInit {
     this.showHide = true;
     this.showHide2=false;
     this.showHide3=false;
+    this.showHide4=false;
   }
   changeShowStatus2(){
     this.showHide2 = true;
     this.showHide = false;
     this.showHide3=false;
+    this.showHide4=false;
   }
   changeShowStatus3(){
     this.showHide3 = true;
     this.showHide2 = false;
     this.showHide=false;
+    this.showHide4=false;
   }
   
   logOut(){
     sessionStorage.setItem('customerId' ,'null');
          sessionStorage.setItem('customerName','null');
-         //sessionStorage.setItem('productId','null');
+         
     this.router.navigate(['login']);
   }
   

@@ -18,7 +18,7 @@ export class ForgotpasswordComponent implements OnInit {
   forgotPassword(f:NgForm){
     this.f.username=f.value.t1;
     this.forgotpassword.forgotpassword(this.f.username).subscribe(response =>{
-      console.log(response);
+     
        if(response.status == 'SUCESS'){
          this.message=response.message;
        }

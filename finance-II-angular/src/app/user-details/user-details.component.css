@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 10px;
 }
 
@@ -33,7 +33,7 @@ td {
 tr:nth-child(odd) {background-color: #e7e4e4;}
 tr:hover {background-color: #ddd;}
 
-/* button */
+
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -69,4 +69,39 @@ tr:hover {background-color: #ddd;}
 .button:hover span:after {
   opacity: 1;
   right: 0;
+} */
+/* th,td {
+  font-weight: bolder;
+  padding: 10px;
+  border: none;
+  text-align: left;
 }
+tr:hover {background-color: #ddd;} 
+.col-sm-12{
+  border: 1px solid #ccc;
+  background-color:black;
+  height: 100vh;
+  position: fixed;
+}
+.btn{
+  color: black;
+  margin-top: 20px;
+} */
+/*.col-sm-10{
+    
+  }*/
+  .nav-link{
+    font-weight: bolder;
+  }
+  .nav{
+    margin-left: 15px;
+  }
+  td{
+    font-weight:500;
+    
+  }
+  th{
+    font-weight: bolder;
+   
+  }
+  
