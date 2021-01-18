@@ -1,37 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
 <div>
     <a [routerLink]="'/product-info'">Back</a>
 </div> <br> <br>
-<h2 style="text-align: center;">PROCEED TO PAY</h2>
-<div class="jumbotron text-center" style="background-color:lightsteelblue">
+  <div class="container-fluid" id="payment-gt">
+    <div class="row">
+      <div class="pay-mod">
+        <h3 id="pg-ttl">Payment</h3>
+        <div class="card" id="comp-form">
+          <!-- Default payment options -->
+                    <!-- Default checked radio -->
+                  <div id="pay-reg">
+                    <p><i>All transactions are secure and encrypted</i></p>
+                    <p><b>EMI payment options</b></p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                      <label class="form-check-label" for="flexRadioDefault2">Credit Card</label><br><br>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                      <label class="form-check-label" for="flexRadioDefault1">Debit Card</label><br><br>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                      <label class="form-check-label" for="flexRadioDefault1">Paypal</label><br><br>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                      <label class="form-check-label" for="flexRadioDefault1">BHIM UPI/Gpay/AmazonPay</label><br><br>
+                    </div><br><br>
+                    <!-- Default radio -->
+                    <!-- Default checked radio ADDRESS -->
+                    
+                    <p><b>Billing Address:</b></p>
+                    <p>Select the address that matches your card or payment method</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioCheckedDisabled" checked disabled/>
+                      <label class="form-check-label" for="flexRadioCheckedDisabled">Same as Registration address.</label><br><br>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" disabled/>
+                      <label class="form-check-label" for="flexRadioDisabled">Address different than registration address.</label>
+                    </div><br><br>
+                  </div>  
+          <!-- <h2>PROCEED TO PAY</h2> -->
+          <!-- </div>
+          <div class="jumbotron text-center" style="background-color:lightsteelblue;"> -->
+          <h3 id="conc">Total Amount : {{product.productPrice}}</h3>
+          <h3 id="conc">Selected Tenure : {{tenure}} months</h3>
+           <h3>Amount to be paid per installment : {{product.productPrice/tenure}}</h3> 
+          <form (ngSubmit) = "buyNow()">
+            <input type="checkbox" name="t1" id="t1" checked disabled> Generate Invoice <br>
+              <button type="submit" id="pay-btn" class="btn btn-success" >Confirm Order</button>  &nbsp; &nbsp; {{message}} &nbsp; &nbsp; {{status}}
+          </form>
+        </div>
+            
+        <!-- <h3>Amount to be paid per installment : {{product.productPrice/tenure}}</h3>  -->
+      </div>
+      </div>
+  </div>  
 
-<!-- <h2>PROCEED TO PAY</h2> -->
-<!-- </div>
-<div class="jumbotron text-center" style="background-color:lightsteelblue;"> -->
-<h3>Total Amount : {{product.productPrice}}</h3>
 
-<h3>Selected Tenure : {{tenure}} months</h3>
-<!-- <h3>Amount to be paid per installment : {{product.productPrice/tenure}}</h3> -->
-<form (ngSubmit) = "buyNow()">
+<!-- <h3>Selected Tenure : {{tenure}} months</h3>
+ <h3>Amount to be paid per installment : {{product.productPrice/tenure}}</h3> -->
+<!-- <form (ngSubmit) = "buyNow()">
     <input type="checkbox" name="t1" id="t1" checked disabled> Generate Invoice <br>
     <button type="submit" >CONFIRM PAYMENT</button>  &nbsp; &nbsp; {{message}} &nbsp; &nbsp; 
 </form>
-</div>
+</div> --> 
 <!-- <h3>Amount to be paid per installment : {{product.productPrice/tenure}}</h3>  -->
 
-
-
-
-</body>
-</html>

@@ -22,6 +22,9 @@ import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.compo
 import { CommonModule } from '@angular/common';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TermsandconditionComponent } from './termsandcondition/termsandcondition.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { IndexPageComponent } from './index-page/index-page.component';
 
 
 
@@ -40,7 +43,10 @@ import { TermsandconditionComponent } from './termsandcondition/termsandconditio
     InstallmentListComponent,
     PaymentGatewayComponent,
     ForgotpasswordComponent,
-    TermsandconditionComponent
+    TermsandconditionComponent,
+    HeaderComponent,
+    FooterComponent,
+    IndexPageComponent
   ],
   imports: [
     BrowserModule,
