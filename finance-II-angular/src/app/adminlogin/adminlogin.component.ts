@@ -25,10 +25,10 @@ export class AdminloginComponent implements OnInit {
     this.adminlogin.username = adminlogin.value.t1;
     this.adminlogin.password = adminlogin.value.t4;
     this.adminLoginService.login(this.adminlogin).subscribe(response =>{
-      console.log(response.message);
        if(response.status == 'SUCESS'){
+         
         this.router.navigate(['userdetails']);
-         console.log('checking');
+         
        }
        else
        this.message = response.message;

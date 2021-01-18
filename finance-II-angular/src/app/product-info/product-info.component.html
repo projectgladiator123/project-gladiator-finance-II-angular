@@ -68,7 +68,8 @@
           <button id="buy-now-button" class="btn btn-success" *ngIf="!product.quantity" disabled> BUY NOW</button>
           <button id="buy-now-button" class="btn btn-success" *ngIf="product.quantity" (click) = "proceedToPayment()"> BUY NOW</button> &nbsp; &nbsp; {{message}} &nbsp; &nbsp; {{status}}
           <br>
-          <a id="terms" href="">Terms and Conditions</a>
+          <!--<a id="terms" href="">Terms and Conditions</a>-->
+          <a [routerLink]="'/termsandcondition'">Terms and Conditions</a>
         </div>
         <div id="review-details">
           <app-product-review></app-product-review>

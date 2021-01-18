@@ -73,7 +73,7 @@ export class DashboardComponent implements OnInit {
   logOut(){
     sessionStorage.setItem('customerId' ,'null');
          sessionStorage.setItem('customerName','null');
-         //sessionStorage.setItem('productId','null');
+         
     this.router.navigate(['login']);
   }
   
