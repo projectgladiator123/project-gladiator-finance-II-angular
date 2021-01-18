@@ -1,10 +1,10 @@
-ul {
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky; 
     position: sticky;
     top: 0;
   }
@@ -27,4 +27,23 @@ ul {
   
   .active {
     background-color: #a34caf;
+  } */
+
+  li{
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  #header{
+    border: 1px solid white;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  #left-content-reg{
+    margin-left: 30px;
+  }
+  #left-content-log{
+    margin-left: 40px;
+  }
+  .fas{
+    padding-right: 7px;
   }

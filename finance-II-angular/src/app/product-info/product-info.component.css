@@ -54,3 +54,6 @@
 #review-details{
     margin-left: 30px;
 }
+#details-badge{
+    display: inline-block;
+}

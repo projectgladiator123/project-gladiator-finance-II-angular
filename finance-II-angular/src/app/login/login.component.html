@@ -23,12 +23,14 @@
         </table><br><br>
              
             <button type ="submit" id="send" class="btn btn-success btn-lg" [disabled]="!login.valid"  >Login</button> <button id="forgot" type="button" class="btn btn-link btn-sm" id ="forgot-password"> <a [routerLink]="'/forgotpassword'">forgot password?</a></button>
-                <br><br><br>
+                <br>
     </form>
+    <div>
+        <button type="button" class="btn btn-danger" id="admin-login"><a [routerLink]="'/adminlogin'">Login as admin</a></button>
+        <br><br>
+    </div>
 </div>
-        <div>
-            <button type="button" class="btn btn-danger" id="admin-login"><a [routerLink]="'/adminlogin'">Login as admin</a></button>
-        </div>
+       
 
              
 
