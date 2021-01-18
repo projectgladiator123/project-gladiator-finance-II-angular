@@ -1,6 +1,6 @@
 <p>{{message}}</p>
 
-<div class="container" id = "n1">
+<div class="container-fluid" id = "n1">
     <p id="login-head">Login</p> 
     <form class="form-horizontal" id="login-form" #login="ngForm" (ngSubmit)="loginCheck(login)">
         <table>
@@ -27,7 +27,7 @@
     </form>
 </div>
         <div>
-            <button type="button" class="btn btn-danger" id="admin-login"><a [routerLink]="'/adminlogin'">Login as admin</a></button>
+            <button type="button" class="btn btn-link" id="admin-login"><a [routerLink]="'/adminlogin'">Login as admin</a></button>
         </div>
 
              

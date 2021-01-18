@@ -1,4 +1,4 @@
-<div class="container" id ="reg-form">
+<div class="container-fluid" id ="reg-form">
    <p id="reg-head"> Registration Form</p>
     <form class="form-horizontal" #user="ngForm"  (ngSubmit)= registerUser(user)>
    
@@ -37,7 +37,7 @@
         <div  class="form-group">
             <label for="password">Password:</label>
             <input type="password" placeholder="Enter password" name="password" id="psw"  [(ngModel)]="user.password" minlength="8" maxlength="20" required #password="ngModel"><br>
-            <span id="validation" *ngIf="password.touched && !password.valid">This is a required field.</span><br>
+            <span id="validation" *ngIf="password.touched && !password.valid">Password should be atleast 8 digits.</span><br>
         </div>
             <!-- <label for="psw-repeat">Confirm Password:</label> -->
             <!-- <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required [(ngModel)]=user.userconfpass><br> -->
