@@ -4,8 +4,8 @@
   <div class="container-fluid" id="payment-gt">
     <div class="row">
       <div class="pay-mod">
-        <h3 id="pg-ttl">Payment</h3>
-        <div class="card" id="comp-form">
+        <h3 id="pg-ttl" style="text-align: center;"></h3>
+        <div class="card" id="comp-form" >
           <!-- Default payment options -->
                     <!-- Default checked radio -->
                   <div id="pay-reg">
@@ -49,7 +49,7 @@
            <h3>Amount to be paid per installment : {{product.productPrice/tenure}}</h3> 
           <form (ngSubmit) = "buyNow()">
             <input type="checkbox" name="t1" id="t1" checked disabled> Generate Invoice <br>
-              <button type="submit" id="pay-btn" class="btn btn-success" >Confirm Order</button>  &nbsp; &nbsp; {{message}} &nbsp; &nbsp; {{status}}
+              <button type="submit" id="pay-btn" class="btn btn-success" >Confirm Order</button> <br> &nbsp; &nbsp; {{message}} &nbsp; &nbsp; 
           </form>
         </div>
             

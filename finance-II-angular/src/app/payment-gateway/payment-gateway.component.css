@@ -1,15 +1,14 @@
-#pay-mod{
+/* .pay-mod{
     background-color: #f0f097;
-}
+} */
 #pay-reg{
     background-color: #f0f0f0;
     padding: 8px;
     
 
 }
-#comp-form{
-    margin-left: 750px;
-    margin-top: -3px;
+.card {
+    margin-left: 40%;
 
     
 }
@@ -25,4 +24,5 @@
 }
 #pg-ttl{
     margin-left: 910px;
+    /* text-align: center; */
 }
