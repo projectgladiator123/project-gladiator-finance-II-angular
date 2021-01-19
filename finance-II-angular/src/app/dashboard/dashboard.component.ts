@@ -51,6 +51,12 @@ export class DashboardComponent implements OnInit {
     
   }
 
+  upgradeCard(){
+    this.dashboardService.upgrade(this.card.cardNo).subscribe(response=>{
+      this.ngOnInit();
+    })
+  }
+
   changeShowStatus(){
     this.showHide = true;
     this.showHide2=false;
@@ -70,12 +76,12 @@ export class DashboardComponent implements OnInit {
     this.showHide4=false;
   }
   
-  logOut(){
-    sessionStorage.setItem('customerId' ,'null');
-         sessionStorage.setItem('customerName','null');
+  // logOut(){
+  //   sessionStorage.setItem('customerId' ,'null');
+  //        sessionStorage.setItem('customerName','null');
          
-    this.router.navigate(['login']);
-  }
+  //   this.router.navigate(['login']);
+  // }
   
 
 }

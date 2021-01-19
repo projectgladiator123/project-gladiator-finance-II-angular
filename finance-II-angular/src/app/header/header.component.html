@@ -16,7 +16,7 @@
         <li  id="left-content-log"  class="nav-item"><a class="nav-link active" [routerLink]="'/login'"><i class="fas fa-sign-in-alt"></i>Login</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right ml-auto">
-        <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+        <li class="nav-item"><a class="nav-link active" [routerLink]="'/login'" (click)="logOut()" ><i class="fas fa-sign-out-alt"></i>Logout</a></li>
     </ul>
 </nav>
 <!-- <nav class="navbar">
