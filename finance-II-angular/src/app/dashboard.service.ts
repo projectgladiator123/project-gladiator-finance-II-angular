@@ -15,6 +15,17 @@ export class DashboardService {
     return this.http.get(url);
   }
 
+  upgrade(cardNo: Number){
+    let url = "http://localhost:8080/finance-II/api/upgrade?cardNo=" +cardNo;
+    return this.http.get(url);
+
+  }
+
+  // downgrade(userId : Number){
+  //   let url = "http://localhost:8080/finance-II/api/downgrade?userId=" +userId;
+  //   return this.http.get(url);
+  // }
+
   fetchPurchase(userId : Number): Observable<any>{
     let url = "http://localhost:8080/finance-II/api/dashboard-purchase-history?userId=" +userId;
     return this.http.get(url);

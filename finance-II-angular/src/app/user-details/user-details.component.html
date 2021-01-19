@@ -194,7 +194,7 @@
                         <th>Quantity</th>
                         <th>MAX EMI Tenure</th>
                         <th>Edit</th>
-                        <th>Delete</th>
+                        <!-- <th>Delete</th> -->
                     </tr>
                     <tr *ngFor = "let product of productlist">
                         <td> {{product.productId}}</td>
@@ -205,7 +205,7 @@
                         <td #topicQuantity contenteditable (input)="product.quantity=topicQuantity.innerText"><span class="badge badge-info">{{product.quantity}}</span></td>
                         <td #topicTenure contenteditable (input)="product.maxTenure=topicTenure.innerText"><span class="badge badge-warning">{{product.maxTenure}}</span></td>
                         <td><button class="btn btn-primary"  (click) = "editProduct(product)" >Edit</button></td>  
-                        <td><button class="btn btn-danger"  (click) = "deleteProduct(product)">Delete</button></td>
+                        <!-- <td><button class="btn btn-danger"  (click) = "deleteProduct(product)">Delete</button></td> -->
                     </tr>   
                 </table>
                 <div class="alert alert-success">
