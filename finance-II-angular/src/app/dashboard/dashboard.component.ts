@@ -70,12 +70,12 @@ export class DashboardComponent implements OnInit {
     this.showHide4=false;
   }
   
-  logOut(){
-    sessionStorage.setItem('customerId' ,'null');
-         sessionStorage.setItem('customerName','null');
+  // logOut(){
+  //   sessionStorage.setItem('customerId' ,'null');
+  //        sessionStorage.setItem('customerName','null');
          
-    this.router.navigate(['login']);
-  }
+  //   this.router.navigate(['login']);
+  // }
   
 
 }
