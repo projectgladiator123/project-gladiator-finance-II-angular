@@ -145,7 +145,8 @@
                 </tr>
             </table>
             <h3 id="remaining-balance-header">Remaining Balance : Rs : {{card.balance | number:'.2-2'}}</h3>
-            <button  id="upgrade-button"  class="btn btn-warning" (click)= "upgradeCard()" disabled = "card.cardType === 'platinum'">UPGRADE CARD</button>
+            <button  id="upgrade-button"  class="btn btn-warning" (click)= "upgradeCard()" *ngIf="card.cardType === 'platinum'" disabled>UPGRADE CARD</button>
+            <button  id="upgrade-button"  class="btn btn-warning" (click)= "upgradeCard()" *ngIf="card.cardType === 'gold'">UPGRADE CARD</button>
             <br>
             <br>
             <div class="alert alert-success" *ngIf="showHide5">
@@ -169,6 +170,7 @@
                     <th id="product-table-header">ProductName</th>
                     <th id="product-table-header">Date of Purchase</th>
                     <th id="product-table-header">Price</th>
+                    <th id="product-table-header">Tenure Period Opted</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -176,6 +178,7 @@
                     <td><span class="badge badge-success">{{purchase.product.productName}}</span></td>
                     <td><span class="badge badge-secondary">{{purchase.dateOfPurchase[2]}}-{{purchase.dateOfPurchase[1]}}-{{purchase.dateOfPurchase[0]}}</span></td>
                     <td><span class="badge badge-secondary">Rs. {{purchase.product.productPrice}}</span></td>
+                    <td><span class="badge badge-secondary">{{purchase.tenurePeriodOpted}}</span></td>
                   </tr>
                 </tbody>
               </table>

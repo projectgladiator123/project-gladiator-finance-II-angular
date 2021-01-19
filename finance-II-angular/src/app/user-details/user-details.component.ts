@@ -85,7 +85,7 @@ export class UserDetailsComponent implements OnInit {
     this.product.vendor = product.value.vendor;
     this.product.maxTenure = product.value.maxTenure;
     this.product.quantity = product.value.quantity;
-    this.product.productImage = "C:/images";
+    this.product.productImage = "/assets/images/microwave.jpg";
     this.product.eligibility = "gold";
 
     this.userService.saveP(this.product).subscribe(response => {

@@ -44,12 +44,12 @@
           <!-- <h2>PROCEED TO PAY</h2> -->
           <!-- </div>
           <div class="jumbotron text-center" style="background-color:lightsteelblue;"> -->
-          <h3 id="conc">Total Amount : {{product.productPrice}}</h3>
-          <h3 id="conc">Selected Tenure : {{tenure}} months</h3>
-           <h3>Amount to be paid per installment : {{product.productPrice/tenure}}</h3> 
+          <h6 id="conc">Total Amount : {{product.productPrice}}</h6>
+          <h6 id="conc">Selected Tenure : {{tenure}} months</h6>
+           <h6>Amount to be paid per installment : {{product.productPrice/tenure}}</h6> 
           <form (ngSubmit) = "buyNow()">
             <input type="checkbox" name="t1" id="t1" checked disabled> Generate Invoice <br>
-              <button type="submit" id="pay-btn" class="btn btn-success" >Confirm Order</button> <br> &nbsp; &nbsp; {{message}} &nbsp; &nbsp; 
+              <button type="submit" id="pay-btn" class="btn btn-success" >Confirm Order</button> <br> <h6>{{message}} </h6>
           </form>
         </div>
             
