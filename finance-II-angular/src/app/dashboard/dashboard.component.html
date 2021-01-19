@@ -145,7 +145,7 @@
                 </tr>
             </table>
             <h3 id="remaining-balance-header">Remaining Balance : Rs : {{card.balance | number:'.2-2'}}</h3>
-            <button  id="upgrade-button"  class="btn btn-warning" (click)= "upgradeCard()">UPGRADE CARD</button>
+            <button  id="upgrade-button"  class="btn btn-warning" (click)= "upgradeCard()" disabled = "card.cardType === 'platinum'">UPGRADE CARD</button>
             <br>
             <br>
             <div class="alert alert-success" *ngIf="showHide5">
@@ -174,8 +174,8 @@
                 <tbody>
                   <tr *ngFor = "let purchase of purchases">
                     <td><span class="badge badge-success">{{purchase.product.productName}}</span></td>
-                    <td><span class="badge badge-secondary">{{purchase.dateOfPurchase}}</span></td>
-                    <td><span class="badge badge-secondary">{{purchase.product.productPrice}}</span></td>
+                    <td><span class="badge badge-secondary">{{purchase.dateOfPurchase[2]}}-{{purchase.dateOfPurchase[1]}}-{{purchase.dateOfPurchase[0]}}</span></td>
+                    <td><span class="badge badge-secondary">Rs. {{purchase.product.productPrice}}</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -190,7 +190,7 @@
                         <div class="media border p-3">
                           <div class="media-body">
                               <h5>Product : <span class="badge badge-primary">{{purchase.product.productName}}</span></h5>
-                              <h5>Purchase Date  : <span class="badge badge-primary">{{purchase.dateOfPurchase}}</span></h5>
+                              <h5>Purchase Date  : <span class="badge badge-primary">{{purchase.dateOfPurchase[2]}}-{{purchase.dateOfPurchase[1]}}-{{purchase.dateOfPurchase[0]}}</span></h5>
                           </div>
                         </div> 
                     </div>
