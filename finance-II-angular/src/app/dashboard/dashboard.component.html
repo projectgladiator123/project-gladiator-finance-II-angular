@@ -145,7 +145,12 @@
                 </tr>
             </table>
             <h3 id="remaining-balance-header">Remaining Balance : Rs : {{card.balance | number:'.2-2'}}</h3>
-            <button (click)= "upgradeCard()">UPGRADE CARD</button>
+            <button  id="upgrade-button"  class="btn btn-warning" (click)= "upgradeCard()">UPGRADE CARD</button>
+            <br>
+            <br>
+            <div class="alert alert-success" *ngIf="showHide5">
+                <h6>Card Upgraded Successfully!!!</h6>
+            </div>
         </div>
         </div> 
 

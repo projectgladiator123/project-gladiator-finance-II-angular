@@ -17,12 +17,14 @@ export class DashboardComponent implements OnInit {
   showHide2: boolean;
   showHide3: boolean;
   showHide4:boolean;
+  showHide5:boolean;
 
   constructor(private dashboardService : DashboardService,private router: Router) {
     this.showHide=false;
     this.showHide2=false;
     this.showHide3=false;
     this.showHide4=true;
+    this.showHide5=false;
    }
 
   ngOnInit(): void {
@@ -55,6 +57,7 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.upgrade(this.card.cardNo).subscribe(response=>{
       this.ngOnInit();
     })
+    this.showHide5=true;
   }
 
   changeShowStatus(){

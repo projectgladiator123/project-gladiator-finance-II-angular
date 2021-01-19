@@ -134,6 +134,10 @@
   #remaining-balance-header{
     margin-left: 28%;
   }
+  #upgrade-button{
+    margin-left: 43%;
+    font-weight: bolder;
+  }
   #show-products{
     font-size: 20px;
     text-align: center;
